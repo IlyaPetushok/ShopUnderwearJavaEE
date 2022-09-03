@@ -1,0 +1,270 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url("/front/fonts/Roboto.ttf");
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url("/front/fonts/Robotobold.ttf");
+    font-weight: bold;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0px auto;
+}
+
+.title {
+    margin: 10px 250px 0px 0px;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+
+/*.menu a{*/
+/*    text-decoration: none;*/
+/*    color: white;*/
+/*}*/
+.menu-item:hover {
+    border-bottom: 1px solid white;
+    color: white;
+}
+
+header {
+    /*position: fixed;*/
+    /*width: 100%;*/
+    /*margin-top: -120px;*/
+    background-color: black;
+    color: white;
+    padding: 14px 0px;
+    border-bottom: 2px solid black;
+}
+
+header button{
+    border: none;
+    background-color: black;
+}
+
+header .corsina{
+    margin-left: 80px;
+    margin-top: -2px;
+    width: 30px;
+    height: 30px;
+}
+header .container {
+    display: flex;
+    flex-direction: row;
+}
+
+header h2 {
+    color: white;
+    margin: 0px 40px;
+}
+
+.menu li {
+    margin: 6px 80px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+}
+
+/*main*/
+
+.main-image {
+    margin-top: -10px;
+    float: right;
+}
+
+/*.main-space{*/
+/*    display: flex;*/
+/*    margin-bottom: 40px;*/
+/*}*/
+.main-text {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    margin-top: 120px;
+    width: 600px;
+}
+
+.main p {
+    font-weight: bold;
+    font-size: 18px;
+    margin: 50px 15px;
+}
+
+/*info*/
+.info {
+    margin-top: 120px;
+}
+
+.info img {
+    border-radius: 5px;
+    width: 500px;
+    height: 300px;
+    margin: 30px 0px;
+}
+
+.info p {
+    text-align: justify;
+    padding: 0px 80px;
+}
+
+.info span {
+    font-weight: bold;
+}
+
+.info label {
+    display: flex;
+    margin-top: 50px;
+    font-size: 25px;
+    margin-left: 35%;
+}
+
+.info li {
+    margin-top: 30px;
+    list-style: none;
+    background: url("<%=request.getContextPath()%>/front/images/galkaForUl.png") no-repeat 0 4px;
+    padding-left: 80px;
+    /*list-style-image: url("image/galkaForUl.png") no-repeat 10px;*/
+}
+
+/*shop*/
+
+.shop-title h2 {
+    text-align: center;
+    font-weight: normal;
+    padding: 30px 0px;
+}
+
+.shop-items {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 100px;
+}
+
+.shop-item {
+    /*border-style: solid;*/
+    /*border-width: 3px;*/
+    background-color: lightgrey;
+    border-radius: 25px;
+    margin: 0px 20px;
+    width: 300px;
+    height: 500px;
+    margin-bottom: 50px;
+}
+
+
+.shop-item-photo img {
+    width: 250px;
+    height: 300px;
+    object-fit: cover;
+    padding: 30px 0px;
+    display: flex;
+    /*border-style: solid;*/
+    border-radius: 50px;
+    margin: 0px auto;
+    transition: all .3s;
+}
+.shop-item-photo img:hover {
+    transform: scale(1.1);
+}
+
+.shop-item-info {
+    /*border-style: solid;*/
+    /*border-width: 2px;*/
+    width: 250px;
+    margin: 0px auto;
+}
+
+.shop-item-color {
+    display: flex;
+    float: right;
+    width: 10px;
+    height: 10px;
+    /*border: 1px solid black;*/
+    border-radius: 3px;
+    background-color: white;
+}
+
+.shop-item-color:hover::after {
+    content: attr(data-title);
+    font-size: 12px;
+    position: relative;
+    bottom: 2px;
+    right: 60px;
+}
+
+.shop-item-data{
+    display: flex;
+    float: right;
+    text-align: center;
+}
+
+.shop-item-button{
+    display: flex;
+    float: right;
+}
+.shop-item-info td{
+    padding-left: 5px;
+}
+
+.shop-item-info button{
+    display: flex;
+    border-radius: 3px;
+    margin-top: 20px;
+    width: 100px;
+    height: 30px;
+    /*padding-left: 15px;*/
+    /*margin-bottom: 20px;*/
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: white;
+}
+.shop-item-info button:hover{
+    color: black;
+    background-color: white;
+}
+
+.shop-item-button-corsina{
+    background-color: white;
+}
+
+/*footer*/
+footer{
+    padding-top: 30px;
+    height: 100px;
+    background-color: black;
+}
+
+footer h2{
+    color:white;
+}
+footer p{
+    color: white;
+}
+/*corsina*/
+/*.corsina-block{*/
+/*    border-style: solid;*/
+/*    border-width: 1px;*/
+/*    border-color: black;*/
+/*    width: 800px;*/
+/*    height: 500px;*/
+/*}*/
+
