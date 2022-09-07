@@ -3,7 +3,7 @@ package com.example.shopunderwear.entity;
 public class Admin {
     private String password,login;
 
-    public Admin(String password, String login) {
+    public Admin(String login, String password) {
         this.password = password;
         this.login = login;
     }

@@ -2,6 +2,8 @@ package com.example.shopunderwear.command.impl;
 
 import com.example.shopunderwear.command.Command;
 import com.example.shopunderwear.entity.Admin;
+import com.example.shopunderwear.service.AdminService;
+import com.example.shopunderwear.service.impl.AdminServiceImpl;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
@@ -14,10 +16,13 @@ public class AdminInputCommand implements Command {
 
         Admin admin=new Admin(login,password);
 
-        if(login.equals(password)){
+        AdminService adminService=AdminServiceImpl.getInstance();
+        if(adminService.adminInputDao(admin)){
             System.out.println(true);
         }
-
+        else {
+            System.out.println(false);
+        }
         return null;
     }
 }
