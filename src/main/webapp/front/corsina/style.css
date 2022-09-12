@@ -1,0 +1,312 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url("/pageShopHead/fonts/Roboto.ttf");
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url("/pageShopHead/fonts/Robotobold.ttf");
+    font-weight: bold;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0px auto;
+}
+
+/*header*/
+.header{
+    padding: 14px 0px;
+    background-color: black;
+    border-bottom: 7px solid black;
+    color: white;
+    /*margin-bottom: 25px;*/
+}
+header .container{
+    display: flex;
+    flex-direction: row;
+}
+.header ul{
+    display: flex;
+}
+.header li{
+    list-style: none;
+}
+.header a{
+    color: white;
+    text-decoration: none;
+}
+.header-item:hover{
+    border-bottom: solid white 1px;
+}
+
+header h2 {
+    color: white;
+    margin: 0px 40px;
+}
+
+.menu li {
+    margin: 6px 80px;
+}
+
+
+/*item-corsina*/
+
+
+.item-corsina{
+    display: flex;
+    /*padding: 20px 0px;*/
+    border-radius: 25px;
+    /*margin: 25px 0px;*/
+    background-color: lightgrey;
+    width: 80%;
+    margin: 25px auto;
+    height: 330px;
+}
+
+.item-corsina-img img{
+    margin-left: 30px;
+    /*border: solid black 1px;*/
+    border-radius: 40px;
+    display: flex;
+    padding: 20px 0px;
+    width: 230px;
+    height: 290px;
+    object-fit: cover;
+}
+
+.item-corsina h2{
+    padding: 20px;
+    margin: 0px auto;
+    height: 20px;
+}
+
+.item-corsina table{
+    margin: 10px auto;
+    /*border: 1px solid black;*/
+}
+
+tr{
+    /*border: 1px solid black;*/
+}
+
+.item-corsina td{
+    width: 200px;
+    padding: 20px 0;
+    /*border: 1px solid black;*/
+}
+
+.shop-item-color {
+    display: flex;
+    /*float: right;*/
+    margin: 0 auto;
+    width: 30px;
+    height: 30px;
+    /*border: 1px solid black;*/
+    border-radius: 3px;
+    background-color: white;
+}
+
+.shop-item-color:hover::after {
+    content: attr(data-title);
+    font-size: 12px;
+    position: relative;
+    top:5px;
+    right: 60px;
+}
+
+.shop-item-data{
+    display: flex;
+    /*float: right;*/
+    text-align: center;
+}
+
+
+
+.item-info{
+    width: 460px;
+    padding: 0 20px;
+    text-align: center;
+}
+.quantity-item{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.quantity-item input{
+    padding: 0 15px;
+    width: 30px;
+    font-size: 25px;
+    text-align: center;
+    border: none;
+    outline: none;
+    background-color: lightgrey;
+}
+
+.quantity-item button{
+    color: white;
+    background-color: black;
+    width: 30px;
+    text-align: center;
+    font-size: 20px;
+    padding: 0 10px;
+    margin: 0 auto;
+    border-radius: 50px;
+    border: none;
+}
+
+.item-price{
+    font-size: 22px;
+}
+
+.button-option-item{
+    padding-top: 70px;
+    /*padding-right: 70px;*/
+    /*padding-left: 70px;*/
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-left: -15px;
+}
+
+.button-option-item button{
+    font-size: 20px;
+    text-align: center;
+    border-radius: 25px;
+    color: white;
+    background-color: black;
+    width: 180px;
+    height: 80px;
+    margin-bottom: 40px;
+}
+
+.container-for-item
+{
+    display: flex;
+    flex-direction: row;
+    max-width: 1800px;
+    /*float: left;*/
+}
+.shop-items{
+    margin-left: -50px;
+    width: 80%;
+    /*padding-right: 100px;*/
+}
+
+.items-all-corsina{
+    position: sticky;
+    top:10px;
+    right: 50px;
+    margin-top: 25px;
+    margin-bottom: 100px;
+    margin-left: -70px;
+    background-color: lightgrey;
+    width: 25%;
+    height: 330px;
+    border-radius: 25px;
+    /*height: 100px;*/
+}
+
+.items-all-corsina img{
+    width: 30px;
+    height: 30px;
+}
+
+.items-all-corsina table{
+    /*text-align: center;*/
+    /*margin: 0 auto;*/
+    /*border: 1px solid black;*/
+    margin: 20px auto;
+
+}
+.items-all-corsina td{
+    /*text-align: center;*/
+    /*margin: 0 auto;*/
+    padding: 20px 0;
+    float: left;
+    /*text-align: center;*/
+    /*border: 1px solid black;*/
+    width: 150px;
+}
+
+.items-all-corsina td:nth-child(2){
+    text-align: right;
+}
+
+.items-all-corsina h1{
+    margin-top: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.items-all-corsina button{
+    /*margin-top: -10px;*/
+    border-radius: 25px;
+    padding: 15px ;
+    text-align: center;
+    background-color: black;
+    color: white;
+    width: 60%;
+    font-size: 20px;
+}
+.corsina-button{
+    text-align: center;
+}
+
+
+
+.quantity-all-corsina{
+    font-size: 18px;
+}
+
+.price-all-corsina{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+.price{
+    display: flex;
+    margin-left: 60px;
+}
+.price p{
+    padding-left: 10px;
+    font-size: 22px;
+}
+
+.price label{
+    padding-left: 10px;
+    font-size: 23px;
+}
+
+/*.item-img{*/
+/*    width: 220px;*/
+/*    padding: 5px 0;*/
+/*    border: solid;*/
+/*    */
+/*}*/
+
+/*footer*/
+footer{
+    /*margin-top: 50px;*/
+    padding-top: 30px;
+    height: 100px;
+    background-color: black;
+}
+
+footer h2{
+    color:white;
+}
+footer p{
+    color: white;
+}

@@ -12,7 +12,10 @@
     <meta charset="UTF-8">
     <title>HotMeBy</title>
     <link rel="icon" href="logotip.jpg">
-    <link rel="stylesheet" href="style.css">
+    <style>
+        <%@include file="/front/corsina/style.css"%>
+    </style>
+    <link rel="shortcut icon" href="<%=request.getContextPath()%>/front/image/logotip.jpg">
 </head>
 <body>
 <header class="header">
@@ -30,7 +33,7 @@
         <div class="shop-items">
             <div class="item-corsina">
                 <div class="item-corsina-img">
-                    <img src="shop-item/item5.jpg" alt="">
+                    <img src="<%=request.getContextPath()%>/front/image/shop-item/item5.jpg" alt="">
                 </div>
                 <!--            цена ,назв ,материал ,цвет ,кнопка удалить и
                                 мб количество -->
@@ -81,7 +84,7 @@
 
             <div class="item-corsina">
                 <div class="item-corsina-img">
-                    <img src="shop-item/item6.jpg" alt="">
+                    <img src="<%=request.getContextPath()%>/front/image/shop-item/item6.jpg" alt="">
                 </div>
                 <!--            цена ,назв ,материал ,цвет ,кнопка удалить и
                                 мб количество -->
@@ -132,7 +135,7 @@
 
             <div class="item-corsina">
                 <div class="item-corsina-img">
-                    <img src="shop-item/item2.jpg" alt="">
+                    <img src="<%=request.getContextPath()%>/front/image/shop-item/item2.jpg" alt="">
                 </div>
                 <!--            цена ,назв ,материал ,цвет ,кнопка удалить и
                                 мб количество -->
@@ -182,7 +185,7 @@
             </div>
         </div>
         <div class="items-all-corsina">
-            <h1>Корзина <img src="corsina.png" alt=""></h1>
+            <h1>Корзина <img src="<%=request.getContextPath()%>/front/image/corsina-black.png" alt=""></h1>
             <table>
                 <tr>
                     <td><h2>Итого</h2></td>
@@ -211,8 +214,8 @@
             сервиса</p>
     </div>
 </footer>
-<script src="script.js" type="text/javascript">
-
+<script type="text/javascript" charset="utf-8">
+    <%@include file="/front/corsina/script.js"%>
 </script>
 </body>
 </html>
