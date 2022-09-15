@@ -9,7 +9,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class AdminDaoImpl implements AdminDao {
-    private ConnectionPool connectionPool = ConnectionPool.getInstance();
     private static AdminDaoImpl instance=null;
 
     public static AdminDaoImpl getInstance(){
@@ -19,20 +18,23 @@ public class AdminDaoImpl implements AdminDao {
 
     @Override
     public boolean input(String login, String password) {
+        ConnectionPool connectionPool = ConnectionPool.getInstance();
+        Connection connection=null;
         try {
-            Connection connection = connectionPool.getFreeConnection();
+            connection = connectionPool.getFreeConnection();
             PreparedStatement preparedStatement = connection.prepareStatement("Select *from admin WHERE login=? and password=?;");
 //            PreparedStatement preparedStatement= connection.prepareStatement("INSERT INTO admin(login,password) VALUES (?,?);");
             preparedStatement.setString(1, login);
             preparedStatement.setString(2, password);
 //            preparedStatement.executeUpdate();
             ResultSet resultSet= preparedStatement.executeQuery();
-            connectionPool.releaseConnection(connection);
             if(resultSet.next()){
                 return true;
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            connectionPool.releaseConnection(connection);
         }
         return false;
     }

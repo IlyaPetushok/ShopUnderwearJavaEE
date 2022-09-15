@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpServletResponse;
 public class AdminInputCommand implements Command {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
-        String password,login;
+        String page,password,login;
         login=request.getParameter("login");
         password=request.getParameter("password");
 
@@ -18,11 +18,11 @@ public class AdminInputCommand implements Command {
 
         AdminService adminService=AdminServiceImpl.getInstance();
         if(adminService.adminInputDao(admin)){
-            System.out.println(true);
+            page="/pages/adminInput.jsp";
         }
         else {
-            System.out.println(false);
+            page="/";
         }
-        return null;
+        return page;
     }
 }

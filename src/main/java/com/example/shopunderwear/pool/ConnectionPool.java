@@ -69,11 +69,10 @@ public class ConnectionPool {
             while (freeConnection.size() == 0) {
                 condition.await();
             }
-            connection=freeConnection.poll();
+            connection = freeConnection.poll();
         } catch (InterruptedException exception) {
             exception.printStackTrace();
-        }
-        finally {
+        } finally {
             reentrantLock.unlock();
         }
         return connection;
@@ -86,8 +85,7 @@ public class ConnectionPool {
             condition.signalAll();
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
-        finally {
+        } finally {
             reentrantLock.unlock();
         }
     }
