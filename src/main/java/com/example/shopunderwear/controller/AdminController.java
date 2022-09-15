@@ -20,7 +20,8 @@ public class AdminController extends HttpServlet {
 
         String commandStr=request.getParameter("command");
         Command command= CommandType.getTypeCommand(commandStr);
-        command.execute(request,response);
+        String page=command.execute(request,response);
+        response.sendRedirect(request.getContextPath()+page);
     }
 
     public void destroy() {
