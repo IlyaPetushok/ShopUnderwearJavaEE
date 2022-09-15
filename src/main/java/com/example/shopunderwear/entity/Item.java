@@ -1,9 +1,20 @@
 package com.example.shopunderwear.entity;
 
 public class Item {
+    private int id;
+
     private String photoUrl,name,price,color,material;
 
     public Item(String photoUrl, String name, String price, String color, String material) {
+        this.photoUrl = photoUrl;
+        this.name = name;
+        this.price = price;
+        this.color = color;
+        this.material = material;
+    }
+
+    public Item(int id, String photoUrl, String name, String price, String color, String material) {
+        this.id = id;
         this.photoUrl = photoUrl;
         this.name = name;
         this.price = price;
@@ -49,5 +60,13 @@ public class Item {
 
     public void setMaterial(String material) {
         this.material = material;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
