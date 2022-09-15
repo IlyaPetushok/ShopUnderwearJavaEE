@@ -4,6 +4,8 @@ import com.example.shopunderwear.dao.impl.ItemDaoImpl;
 import com.example.shopunderwear.entity.Item;
 import com.example.shopunderwear.service.ItemService;
 
+import java.util.List;
+
 public class ItemServiceImpl implements ItemService {
 
     private static ItemServiceImpl instance=null;
@@ -11,6 +13,13 @@ public class ItemServiceImpl implements ItemService {
     public static ItemServiceImpl getInstance(){
         instance=new ItemServiceImpl();
         return instance;
+    }
+
+    @Override
+    public List<Item> showItems() {
+        ItemDaoImpl itemDao=ItemDaoImpl.getInstance();
+
+        return itemDao.showItems();
     }
 
     @Override
