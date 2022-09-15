@@ -4,6 +4,7 @@ import java.io.*;
 
 import com.example.shopunderwear.command.Command;
 import com.example.shopunderwear.command.CommandType;
+import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
@@ -15,13 +16,14 @@ public class AdminController extends HttpServlet {
         message = "Hello World!";
     }
 
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         response.setContentType("text/html");
 
         String commandStr=request.getParameter("command");
         Command command= CommandType.getTypeCommand(commandStr);
         String page=command.execute(request,response);
-        response.sendRedirect(request.getContextPath()+page);
+//        response.sendRedirect(request.getContextPath()+page);
+        request.getRequestDispatcher(page).forward(request, response);
     }
 
     public void destroy() {
