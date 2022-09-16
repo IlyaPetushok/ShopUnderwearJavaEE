@@ -2,7 +2,7 @@
 .add-item{
     display: none;
     background-color: white;
-    position: absolute;
+    position: fixed;
     top: 25%;
     left: 35%;
     border:1px solid black;
@@ -130,7 +130,7 @@
 
 .change{
     display: none;
-    position: absolute;
+    position: fixed;
     top: 25%;
     left: 35%;
     border:1px solid black;

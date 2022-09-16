@@ -8,7 +8,7 @@ function AddItem() {
 }
 
 (function () {
-    for (let i = 1; i < 7; i++) {
+    for (let i = 1; i < 30; i++) {
         let colorItem = document.getElementById("input-color-" + i + "");
         if (colorItem) {
             document.getElementById("item-color-" + i + "").style.backgroundColor = colorItem.value;

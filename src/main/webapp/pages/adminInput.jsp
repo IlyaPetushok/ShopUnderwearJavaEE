@@ -265,28 +265,6 @@
 
 <script type="text/javascript" charset="utf-8">
     <%@include file="/front/adminInput/script.js"%>
-    $.ajax({
-        type: 'GET',
-        url: 'https://e1.pcloud.link/publink/show?code=XZHSG4ZVGvKpzTUGrhCLBxNXsTilj5qSLW7',
-        contentType: 'application/json',
-        dataType:'json',
-        responseType:'application/json',
-        xhrFields: {
-            withCredentials: false
-        },
-        headers: {
-            'Access-Control-Allow-Credentials' : true,
-            'Access-Control-Allow-Origin':'*',
-            'Access-Control-Allow-Methods':'GET',
-            'Access-Control-Allow-Headers':'application/json',
-        },
-        success: function(data) {
-            console.log(data);
-        },
-        error: function(error) {
-            console.log("FAIL....=================");
-        }
-    })
 </script>
 </body>
 </html>
