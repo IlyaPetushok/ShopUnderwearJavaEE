@@ -69,4 +69,45 @@ public class ItemDaoImpl implements ItemDao {
         }
         return items;
     }
+
+    @Override
+    public boolean deleteItem(int id) {
+        Connection connection=null;
+        ConnectionPool connectionPool=ConnectionPool.getInstance();
+        try{
+            connection=connectionPool.getFreeConnection();
+            PreparedStatement preparedStatement=connection.prepareStatement("DELETE FROM item WHERE iditem=?");
+            preparedStatement.setInt(1,id);
+            preparedStatement.executeUpdate();
+            return true;
+        } catch (SQLException exception) {
+            exception.printStackTrace();
+        } finally {
+            connectionPool.releaseConnection(connection);
+        }
+        return false;
+    }
+
+    @Override
+    public boolean changeItem(Item item) {
+        Connection connection=null;
+        ConnectionPool connectionPool=ConnectionPool.getInstance();
+        try{
+            connection=connectionPool.getFreeConnection();
+            PreparedStatement preparedStatement= connection.prepareStatement("Update  item SET  photoUrl=?,name=?,price=?,color=?,material=? WHERE iditem=?");
+            preparedStatement.setString(1,item.getPhotoUrl());
+            preparedStatement.setString(2,item.getName());
+            preparedStatement.setString(3,item.getPrice());
+            preparedStatement.setString(4,item.getColor());
+            preparedStatement.setString(5,item.getMaterial());
+            preparedStatement.setInt(6,item.getId());
+            preparedStatement.executeUpdate();
+            return true;
+        } catch (SQLException exception) {
+            exception.printStackTrace();
+        } finally {
+            connectionPool.releaseConnection(connection);
+        }
+        return false;
+    }
 }

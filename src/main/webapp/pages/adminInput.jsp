@@ -25,7 +25,7 @@
     <input type="hidden" name="command" value="admin_add_item">
     <div class="add-item" id="add-item">
         <!--        <button>-->
-        <img src="/adminInput/image/images.png" alt="Закрыть" onclick="AddItem()">
+        <img src="<%=request.getContextPath()%>/front/image/crosExit.png" alt="Закрыть" onclick="AddItem()">
         <!--        </button>-->
         <h2>Добавление продукта</h2>
 
@@ -57,11 +57,14 @@
         </div>
     </div>
 </form>
-<form action="/">
+<form action="<%=request.getContextPath()%>/pages/adminHotMeBy" method="post">
+    <input type="hidden" name="command" value="admin_change_item">
     <div id="change" class="change">
-        <img src="/adminInput/image/images.png" alt="Закрыть" onclick="changeItem(0)">
+        <img src="<%=request.getContextPath()%>/front/image/crosExit.png" alt="Закрыть" onclick="changeItem(0)">
         <!--        </button>-->
         <h2>Измениние данных</h2>
+
+        <input id="idItemForChange" type="hidden" name="idItemForChange">
 
         <div class="changeInput">
             <label>Ссылка на картинку</label>
@@ -91,9 +94,6 @@
         </div>
     </div>
 </form>
-<%--<c:forEach var="item" items="${items}">--%>
-<%--    <p><c:out value="${item.name}" /></p>--%>
-<%--</c:forEach>--%>
 <div class="item-info">
     <table>
         <tr class="name-td">
@@ -130,11 +130,15 @@
                         <p class="item-data">б.р</p></td>
 
                     <td>
-                        <input class="item-button" type="submit" value="Изменить" onclick="changeItem(1)">
+                        <input class="item-button" type="submit" value="Изменить" onclick="changeItem(${item.getId()})">
                     </td>
 
                     <td>
-                        <input class="item-button" type="submit" value="Удалить">
+                        <form action="<%=request.getContextPath()%>/pages/adminHotMeBy" method="post">
+                            <input type="hidden" name="command" value="admin_delete_item">
+                            <input type="hidden" name="idItem" value="${item.getId()}">
+                            <input class="item-button" type="submit" value="Удалить">
+                        </form>
                     </td>
                 </tr>
             </div>

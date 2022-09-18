@@ -27,6 +27,7 @@ function changeItem(num) {
         color = document.getElementById("input-color-" + num);
         price = document.getElementById("price-" + num);
         if (color) {
+            document.getElementById("idItemForChange").value=num;
             document.getElementById("changePhoto").value = photo.src;
             document.getElementById("changeName").value = name.textContent;
             document.getElementById("changeColor").value = color.value;
