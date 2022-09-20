@@ -3,10 +3,13 @@ package com.example.shopunderwear.service.impl;
 import com.example.shopunderwear.dao.impl.ItemDaoImpl;
 import com.example.shopunderwear.entity.Item;
 import com.example.shopunderwear.service.ItemService;
+import jakarta.servlet.http.HttpServletRequest;
 
 import java.util.List;
 
 public class ItemServiceImpl implements ItemService {
+
+    private String name,photo,color,price,material;
 
     private static ItemServiceImpl instance = null;
 
@@ -69,5 +72,23 @@ public class ItemServiceImpl implements ItemService {
             newPhotoUrl=photoUrl;
         }
         return newPhotoUrl;
+    }
+
+    public Item returnRequestItem(HttpServletRequest request){
+        photo=request.getParameter("photoUrl");
+        name=request.getParameter("nameItem");
+        color=request.getParameter("colorItem");
+        price=request.getParameter("price");
+        material=request.getParameter("material");
+        return new Item(photo,name,price,color,material);
+    }
+
+    public Item returnRequestItem(HttpServletRequest request,int id){
+        photo=request.getParameter("photoUrl");
+        name=request.getParameter("nameItem");
+        color=request.getParameter("colorItem");
+        price=request.getParameter("price");
+        material=request.getParameter("material");
+        return new Item(id,photo,name,price,color,material);
     }
 }

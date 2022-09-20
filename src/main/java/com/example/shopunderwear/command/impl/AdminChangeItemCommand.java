@@ -13,15 +13,10 @@ public class AdminChangeItemCommand implements Command {
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         int id;
         List<Item> items;
-        String page=null,name,photo,color,price,material;
+        String page=null;
         id=Integer.parseInt(request.getParameter("idItemForChange"));
-        photo=request.getParameter("photoUrl");
-        name=request.getParameter("nameItem");
-        color=request.getParameter("colorItem");
-        price=request.getParameter("price");
-        material=request.getParameter("material");
-        Item item=new Item(id,photo,name,price,color,material);
         ItemServiceImpl itemService=ItemServiceImpl.getInstance();
+        Item item=itemService.returnRequestItem(request,id);
         if(itemService.changeItem(item)){
             items=itemService.showItems();
             request.setAttribute("items",items);
