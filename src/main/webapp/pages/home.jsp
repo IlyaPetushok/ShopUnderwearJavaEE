@@ -21,6 +21,7 @@
         </ul>
         <button><img class="corsina" src="<%=request.getContextPath()%>/front/image/corsina.jpg" alt="корзина">
         </button>
+        <div id="menu-item-quantity" class="menu-item-quantity">0</div>
     </div>
 </header>
 <section id="head" class="main">
@@ -123,7 +124,8 @@
                             <tr>
                                 <td><p>Цвет:</p></td>
                                 <td><p class="shop-item-data">
-                                    <input id="shop-input-color-${item.getId()}" type="hidden" name="item-color" value="white">
+                                    <input id="shop-input-color-${item.getId()}" type="hidden" name="item-color"
+                                           value="white">
                                     <div id="item-color-${item.getId()}" class="shop-item-color" data-title="белый"
                                          value="white"></div>
                                     </p>
@@ -135,7 +137,8 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <button id="shop-item-button-corsina-${item.getId()}" onclick="ButtonClickCorsina(${item.getId()})">В корзину
+                                    <button id="shop-item-button-corsina-${item.getId()}"
+                                            onclick="ButtonClickCorsina(${item.getId()})">В корзину
                                     </button>
                                 </td>
                                 <td>
