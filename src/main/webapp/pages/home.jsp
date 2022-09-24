@@ -108,14 +108,17 @@
         <div class="shop-title">
             <h2>Магазин</h2>
         </div>
+        <input id="quantity" type="hidden" name="quantity" value="${quantity}">
         <div class="shop-items">
             <c:forEach var="item" items="${items}">
+<%--                <input type="hidden" name="quantity" value="${items.size()}">--%>
                 <div class="shop-item">
                     <div class="shop-item-photo">
                         <img src="${item.getPhotoUrl()}" alt="shop">
                     </div>
                     <div class="shop-item-info">
                         <!--                    цвет,цена,материал,-->
+                        <h3 class="shop-item-name">${item.getName()}</h3>
                         <table>
                             <tr>
                                 <td><p>Материал:</p></td>
@@ -125,15 +128,15 @@
                                 <td><p>Цвет:</p></td>
                                 <td><p class="shop-item-data">
                                     <input id="shop-input-color-${item.getId()}" type="hidden" name="item-color"
-                                           value="white">
+                                           value="${item.getColor()}">
                                     <div id="item-color-${item.getId()}" class="shop-item-color" data-title="белый"
-                                         value="white"></div>
+                                         value="${item.getColor()}"></div>
                                     </p>
                                 </td>
                             </tr>
                             <tr>
                                 <td><p>Цена:</p></td>
-                                <td><p class="shop-item-data">${item.getPrice()}</p></td>
+                                <td><p class="shop-item-data">${item.getPrice()}&nbsp;б.р</p></td>
                             </tr>
                             <tr>
                                 <td>
@@ -149,181 +152,6 @@
                     </div>
                 </div>
             </c:forEach>
-            <div class="shop-item">
-                <div class="shop-item-photo">
-                    <img src="<%=request.getContextPath()%>/front/image/shop-item/item2.jpg" alt="shop">
-                </div>
-                <div class="shop-item-info">
-                    <!--                    цвет,цена,материал,-->
-                    <table>
-                        <tr>
-                            <td><p>Материал:</p></td>
-                            <td><p class="shop-item-data">эластичная сетка</p></td>
-                        </tr>
-                        <tr>
-                            <td><p>Цвет:</p></td>
-                            <td><p class="shop-item-data">
-                                <input id="shop-input-color-2" type="hidden" name="item-color" value="red">
-                                <div id="item-color-2" class="shop-item-color" data-title="красный" value="red"></div>
-                                </p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><p>Цена:</p></td>
-                            <td><p class="shop-item-data">90 б.р</p></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <button id="shop-item-button-corsina-2" onclick="ButtonClickCorsina(2)">В корзину
-                                </button>
-                            </td>
-                            <td>
-                                <button class="shop-item-button">Купить</button>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div class="shop-item">
-                <div class="shop-item-photo">
-                    <img src="<%=request.getContextPath()%>/front/image/shop-item/item3.jpg" alt="shop">
-                </div>
-                <div class="shop-item-info">
-                    <!--                    цвет,цена,материал,-->
-                    <table>
-                        <tr>
-                            <td><p>Материал:</p></td>
-                            <td><p class="shop-item-data">эластичная сетка</p></td>
-                        </tr>
-                        <tr>
-                            <td><p>Цвет:</p></td>
-                            <td><p class="shop-item-data">
-                                <input id="shop-input-color-3" type="hidden" name="item-color" value="black">
-                                <div id="item-color-3" class="shop-item-color" data-title="чёрный" value="black"></div>
-                                </p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><p>Цена:</p></td>
-                            <td><p class="shop-item-data">110 б.р</p></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <button id="shop-item-button-corsina-3" onclick="ButtonClickCorsina(3)">В корзину
-                                </button>
-                            </td>
-                            <td>
-                                <button class="shop-item-button">Купить</button>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div class="shop-item">
-                <div class="shop-item-photo">
-                    <img src="<%=request.getContextPath()%>/front/image/shop-item/item4.jpg" alt="shop">
-                </div>
-                <div class="shop-item-info">
-                    <!--                    цвет,цена,материал,-->
-                    <table>
-                        <tr>
-                            <td><p>Материал:</p></td>
-                            <td><p class="shop-item-data">эластичная сетка</p></td>
-                        </tr>
-                        <tr>
-                            <td><p>Цвет:</p></td>
-                            <td><p class="shop-item-data">
-                                <input id="shop-input-color-4" type="hidden" name="item-color" value="black">
-                                <div id="item-color-4" class="shop-item-color" data-title="чёрный" value="black"></div>
-                                </p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><p>Цена:</p></td>
-                            <td><p class="shop-item-data">110 б.р</p></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <button id="shop-item-button-corsina-4" onclick="ButtonClickCorsina(4)">В корзину
-                                </button>
-                            </td>
-                            <td>
-                                <button class="shop-item-button">Купить</button>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div class="shop-item">
-                <div class="shop-item-photo">
-                    <img src="<%=request.getContextPath()%>/front/image/shop-item/item5.jpg" alt="shop">
-                </div>
-                <div class="shop-item-info">
-                    <!--                    цвет,цена,материал,-->
-                    <table>
-                        <tr>
-                            <td><p>Материал:</p></td>
-                            <td><p class="shop-item-data">эластичная сетка</p></td>
-                        </tr>
-                        <tr>
-                            <td><p>Цвет:</p></td>
-                            <td><p class="shop-item-data">
-                                <input id="shop-input-color-5" type="hidden" name="item-color" value="darkslateblue">
-                                <div id="item-color-5" class="shop-item-color" data-title="синий" value=""></div>
-                                </p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><p>Цена:</p></td>
-                            <td><p class="shop-item-data">115 б.р</p></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <button id="shop-item-button-corsina-5" onclick="ButtonClickCorsina(5)">В корзину
-                                </button>
-                            </td>
-                            <td>
-                                <button class="shop-item-button">Купить</button>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div class="shop-item">
-                <div class="shop-item-photo">
-                    <img src="<%=request.getContextPath()%>/front/image/shop-item/item6.jpg" alt="shop">
-                </div>
-                <div class="shop-item-info">
-                    <!--                    цвет,цена,материал,-->
-                    <table>
-                        <tr>
-                            <td><p>Материал:</p></td>
-                            <td><p class="shop-item-data">эластичная сетка</p></td>
-                        </tr>
-                        <tr>
-                            <td><p>Цвет:</p></td>
-                            <td><p class="shop-item-data">
-                                <input id="shop-input-color-6" type="hidden" name="item-color" value="yellow">
-                                <div id="item-color-6" class="shop-item-color" data-title="жёлтый"></div>
-                                </p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><p>Цена:</p></td>
-                            <td><p class="shop-item-data">120 б.р</p></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <button id="shop-item-button-corsina-6" onclick="ButtonClickCorsina(6)">В корзину
-                                </button>
-                            </td>
-                            <td>
-                                <button class="shop-item-button">Купить</button>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
         </div>
     </div>
 </section>
