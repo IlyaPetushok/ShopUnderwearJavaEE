@@ -14,6 +14,8 @@ public class ShowItemCommand implements Command {
         List<Item> items;
         ItemServiceImpl itemService=ItemServiceImpl.getInstance();
         items=itemService.showItems();
+        String indexes=itemService.returnIndexesItems(items);
+        request.setAttribute("quantity",indexes);
         request.setAttribute("items",items);
         return "/pages/home.jsp";
     }

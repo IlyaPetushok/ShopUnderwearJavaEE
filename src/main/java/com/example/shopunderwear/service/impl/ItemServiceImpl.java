@@ -74,6 +74,15 @@ public class ItemServiceImpl implements ItemService {
         return newPhotoUrl;
     }
 
+    public String returnIndexesItems(List<Item> items){
+//        int arr[]=new int[items.size()];
+        String indexes="";
+        for (int i=0;i<items.size();i++){
+            indexes+=items.get(i).getId()+" ";
+        }
+        return indexes;
+    }
+
     public Item returnRequestItem(HttpServletRequest request){
         photo=request.getParameter("photoUrl");
         name=request.getParameter("nameItem");
