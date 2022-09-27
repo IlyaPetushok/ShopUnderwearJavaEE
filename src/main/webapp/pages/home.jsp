@@ -19,8 +19,13 @@
             <li><a onclick="SmoothHeader('info')" class="menu-item">Информация</a></li>
             <li><a onclick="SmoothHeader('shop')" class="menu-item">Магазин</a></li>
         </ul>
-        <button><img class="corsina" src="<%=request.getContextPath()%>/front/image/corsina.jpg" alt="корзина">
-        </button>
+        <form action="<%=request.getContextPath()%>/hotMeBy.by" method="get">
+            <input type="hidden" name="command" value="input_corsina">
+            <input id="indexes" type="hidden" name="indexes">
+            <button>
+                <img class="corsina" src="<%=request.getContextPath()%>/front/image/corsina.jpg" alt="корзина">
+            </button>
+        </form>
         <div id="menu-item-quantity" class="menu-item-quantity">0</div>
     </div>
 </header>
@@ -111,7 +116,7 @@
         <input id="quantity" type="hidden" name="quantity" value="${quantity}">
         <div class="shop-items">
             <c:forEach var="item" items="${items}">
-<%--                <input type="hidden" name="quantity" value="${items.size()}">--%>
+                <%--                <input type="hidden" name="quantity" value="${items.size()}">--%>
                 <div class="shop-item">
                     <div class="shop-item-photo">
                         <img src="${item.getPhotoUrl()}" alt="shop">
@@ -145,6 +150,7 @@
                                     </button>
                                 </td>
                                 <td>
+
                                     <button class="shop-item-button">Купить</button>
                                 </td>
                             </tr>

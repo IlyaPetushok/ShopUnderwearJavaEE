@@ -9,4 +9,5 @@ public interface ItemService {
     List<Item> showItems();
     boolean changeItem(Item item);
     boolean deleteItem(int id);
+    List<Item> showItemsInCorsina(String itemsCorsina);
 }

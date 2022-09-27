@@ -9,4 +9,5 @@ public interface ItemDao {
     List<Item> showItems();
     boolean changeItem(Item item);
     boolean deleteItem(int id);
+//    List<Item> showItems
 }

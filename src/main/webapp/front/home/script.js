@@ -24,8 +24,14 @@ function SmoothHeader(id) {
 //     button.style.backgroundColor = "white"
 //     button.style.color="black";
 // }
+let arr2=[];
 function ButtonClickCorsina(id) {
     let i;
+    // arr2.push(id);
+    let itemId=document.getElementById("indexes");
+    if(itemId){
+        itemId.value+=id+" ";
+    }
     let menu = document.getElementById("menu-item-quantity");
     if (menu) {
         i = Number(menu.textContent);
