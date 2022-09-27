@@ -20,7 +20,14 @@ public class Controller extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
-        Command command= CommandType.getTypeCommand("show_item_home");
+        String commandStr=null;
+        if(request.getParameter("command")==null){
+            commandStr="show_item_home";
+        }else {
+            commandStr=request.getParameter("command");
+        }
+//        System.out.println(commandStr);
+        Command command= CommandType.getTypeCommand(commandStr);
         String page=command.execute(request,response);
 //        request.setAttribute("hi","this is ok");
         request.getRequestDispatcher(page).forward(request,response);
