@@ -109,6 +109,18 @@
             </p>
         </div>
     </div>
+    <div class="user-info">
+        <button>
+            <img src="shop-item/images.png" alt="exit">
+        </button>
+        <h2>Оформление заказа</h2>
+        <form action="">
+            <input type="text" name="name" placeholder="ФИО">
+            <input type="text" name="post" placeholder="Отделение почты">
+            <input type="text" name="telephone" placeholder="Номер телефона">
+            <input type="submit" value="Отправить">
+        </form>
+    </div>
 </section>
 <footer>
     <div class="container">
