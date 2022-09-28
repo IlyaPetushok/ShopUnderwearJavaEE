@@ -20,9 +20,14 @@ function priceShowCorsina() {
     let priceShow = document.getElementById("price-all-corsina");
     let sum=0,sum1=0;
     let num;
-    for (let i = 1; i < 4; i++) {
-        let quantity=document.getElementById("button-quantity-"+i+"")
-        let price = document.getElementById("priceNow-" + i + "");
+    let arr=[];
+    let quantity=document.getElementById("quantity");
+    if(quantity){
+        arr=quantity.value.split(" ");
+    }
+    for (let i = 0; i < arr.length; i++) {
+        let quantity=document.getElementById("button-quantity-"+arr[i]+"")
+        let price = document.getElementById("priceNow-" + arr[i] + "");
         if (price && quantity) {
             // sum=Number(sum);
             // alert("began"+sum);
