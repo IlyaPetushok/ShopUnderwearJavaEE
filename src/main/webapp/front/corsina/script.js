@@ -1,11 +1,18 @@
 (function () {
-    for (let i = 1; i < 4; i++) {
-        let colorItem = document.getElementById("shop-input-color-" + i + "");
+    let arr = [];
+    let quantity = document.getElementById("quantity");
+    if (quantity) {
+        arr = (quantity.value).split(" ");
+    }
+    // alert(arr);
+    for (let i = 0; i < arr.length-1; i++) {
+        // alert(arr[i]);
+        let colorItem = document.getElementById("shop-input-color-" + arr[i] + "");
         if (colorItem) {
-            document.getElementById("item-color-" + i + "").style.backgroundColor = colorItem.value;
+            document.getElementById("item-color-" + arr[i] + "").style.backgroundColor = colorItem.value;
         }
     }
-    priceShowCorsina();
+    priceShowCorsina()
 }());
 
 function priceShowCorsina() {

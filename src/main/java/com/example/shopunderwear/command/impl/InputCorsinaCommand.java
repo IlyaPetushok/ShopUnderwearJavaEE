@@ -12,10 +12,13 @@ import java.util.List;
 public class InputCorsinaCommand implements Command {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
-        String itemsCorsin=request.getParameter("indexes");
+        String indexesItemsInCorsin=request.getParameter("indexes");
 //        System.out.println(itemsCorsin);
         ItemService itemService=ItemServiceImpl.getInstance();
-        List<Item> items=itemService.showItemsInCorsina(itemsCorsin);
+        List<Item> items=itemService.showItemsInCorsina(indexesItemsInCorsin);
+        indexesItemsInCorsin=itemService.returnIndexesItems(items);
+        request.setAttribute("quantity",indexesItemsInCorsin);
+        request.setAttribute("items",items);
         return "/pages/corsina.jsp";
     }
 }
