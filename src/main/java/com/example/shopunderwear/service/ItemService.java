@@ -10,4 +10,5 @@ public interface ItemService {
     boolean changeItem(Item item);
     boolean deleteItem(int id);
     List<Item> showItemsInCorsina(String itemsCorsina);
+    String returnIndexesItems(List<Item> item);
 }

@@ -97,29 +97,6 @@ public class ItemServiceImpl implements ItemService {
         return newPhotoUrl;
     }
 
-
-
-//    @Override
-//    public List<Item> showItemsInCorsina(String itemsCorsina) {
-//        String[] indexes=itemsCorsina.split(" ");
-//        boolean flag=true;
-//        ItemDao itemDao=new ItemDaoImpl();
-//        List<Item> items=itemDao.showItems();
-//        for(int i=0;i<items.size();i++){
-//            for(int j=0;j<indexes.length;i++){
-//                if(items.get(i).getId()!=Integer.parseInt(indexes[j])){
-//                    flag=false;
-//                }
-//            }
-//            if(!flag){
-//                items.remove(i);
-//                flag=true;
-//            }
-//        }
-//        System.out.println(items);
-//        return null;
-//    }
-
     public String returnIndexesItems(List<Item> items){
 //        int arr[]=new int[items.size()];
         String indexes="";
