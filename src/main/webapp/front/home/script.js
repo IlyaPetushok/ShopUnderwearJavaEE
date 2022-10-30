@@ -14,8 +14,20 @@
     }
 }());
 
+function showBlockBurger(){
+    let burgerBlock=document.getElementById("menu-burger");
+    if(burgerBlock.style.display==="none"){
+        burgerBlock.style.display="block";
+    }
+    else {
+        burgerBlock.style.display="none";
+    }
+}
+
 function SmoothHeader(id) {
+    showBlockBurger();
     document.getElementById(id).scrollIntoView({behavior: "smooth"});
+
 }
 
 // function ButtonClickCorsina(id){
