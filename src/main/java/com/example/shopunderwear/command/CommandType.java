@@ -8,7 +8,8 @@ public enum CommandType {
     ADMIN_CHANGE_ITEM(new AdminChangeItemCommand()),
     ADMIN_DELETE_ITEM(new AdminDeleteItemCommand()),
     SHOW_ITEM_HOME(new ShowItemCommand()),
-    INPUT_CORSINA(new InputCorsinaCommand());
+    INPUT_CORSINA(new InputCorsinaCommand()),
+    CREATE_ORDER_COMMAND(new CreateOrderCommand());
 
     Command command;
 
