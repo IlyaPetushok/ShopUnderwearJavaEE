@@ -3,6 +3,7 @@
     margin: 0;
 }
 
+
 @font-face {
     font-family: Roboto;
     src: url("/front/fonts/Roboto.ttf");
@@ -20,11 +21,7 @@ body {
 
 .container {
     max-width: 1200px;
-    margin: 0px auto;
-}
-
-.title {
-    margin: 10px 250px 0px 0px;
+    margin: 0 auto;
 }
 
 .menu {
@@ -33,55 +30,47 @@ body {
     flex-direction: row;
 }
 
-/*.menu a{*/
-/*    text-decoration: none;*/
-/*    color: white;*/
-/*}*/
+.menu-burger {
+    display: none;
+}
+
 .menu-item:hover {
     border-bottom: 1px solid white;
     color: white;
 }
 
-.menu-item-quantity{
-    color:black;
+.menu-button-burger {
+    display: none;
+}
+
+.menu-item-quantity {
+    color: black;
     background-color: white;
     border-radius: 100px;
     font-size: 13px;
     width: 15px;
     height: 15px;
-    margin-top: 20px;
-    margin-left: -5px;
     text-align: center;
-    /*margin-top: -20px;*/
-    /*margin-left: 170px;*/
-    /*justify-content: center;*/
-    /*text-align: center;*/
-    /*margin-bottom: 0px;*/
-    /*position: absolute;*/
-    /*right:30px;*/
+    margin: -12px 0 0 30px;
 }
 
 header {
-    /*position: fixed;*/
-    /*width: 100%;*/
-    /*margin-top: -120px;*/
     background-color: black;
     color: white;
-    padding: 14px 0px;
+    padding: 14px 0;
     border-bottom: 2px solid black;
 }
 
-header button{
+header button {
     border: none;
     background-color: black;
 }
 
 header .corsina{
-    margin-left: 80px;
-    margin-top: -2px;
     width: 30px;
     height: 30px;
 }
+
 header .container {
     display: flex;
     flex-direction: row;
@@ -89,11 +78,15 @@ header .container {
 
 header h2 {
     color: white;
-    margin: 0px 40px;
+    margin: 0 5%;
 }
 
 .menu li {
-    margin: 6px 80px;
+    margin: 6px 35%;
+}
+
+.menu li:last-child {
+    margin: 0 35%;
 }
 
 .menu a {
@@ -108,10 +101,6 @@ header h2 {
     float: right;
 }
 
-/*.main-space{*/
-/*    display: flex;*/
-/*    margin-bottom: 40px;*/
-/*}*/
 .main-text {
     border-top: 1px solid black;
     border-bottom: 1px solid black;
@@ -130,16 +119,31 @@ header h2 {
     margin-top: 120px;
 }
 
-.info img {
-    border-radius: 5px;
-    width: 500px;
-    height: 300px;
-    margin: 30px 0px;
+.info-tr {
+    max-height: 400px;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: row;
 }
 
-.info p {
+.info-img {
+    width: 40%;
+    padding: 0 5%;
+}
+
+.info-img img {
+    border-radius: 5px;
+    width: 100%;
+    height: auto;
+}
+
+.info-text {
+    width: 60%;
+}
+
+.info-text p {
     text-align: justify;
-    padding: 0px 80px;
+    padding: 5% 10%;
 }
 
 .info span {
@@ -150,7 +154,7 @@ header h2 {
     display: flex;
     margin-top: 50px;
     font-size: 25px;
-    margin-left: 35%;
+    justify-content: center;
 }
 
 .info li {
@@ -158,7 +162,12 @@ header h2 {
     list-style: none;
     background: url("<%=request.getContextPath()%>/front/image/galkaForUl.png") no-repeat 0 4px;
     padding-left: 80px;
-    /*list-style-image: url("image/galkaForUl.png") no-repeat 10px;*/
+}
+
+.info-advice {
+    margin: 0 30px;
+    text-align: justify;
+    justify-content: center;
 }
 
 /*shop*/
@@ -166,7 +175,7 @@ header h2 {
 .shop-title h2 {
     text-align: center;
     font-weight: normal;
-    padding: 30px 0px;
+    padding: 30px 0;
 }
 
 .shop-items {
@@ -174,21 +183,19 @@ header h2 {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 100px;
+    margin-bottom: 10px;
 }
 
 .shop-item {
-    /*border-style: solid;*/
-    /*border-width: 3px;*/
     background-color: lightgrey;
     border-radius: 25px;
-    margin: 0px 20px;
+    margin: 0 20px;
     width: 300px;
     height: 500px;
     margin-bottom: 50px;
 }
 
-.shop-item-name{
+.shop-item-name {
     text-align: center;
     margin-top: -13px;
     margin-bottom: 5px;
@@ -199,13 +206,14 @@ header h2 {
     width: 250px;
     height: 300px;
     object-fit: cover;
-    padding: 30px 0px;
+    padding: 30px 0;
     display: flex;
     /*border-style: solid;*/
     border-radius: 50px;
-    margin: 0px auto;
+    margin: 0 auto;
     transition: all .3s;
 }
+
 .shop-item-photo img:hover {
     transform: scale(1.1);
 }
@@ -214,7 +222,7 @@ header h2 {
     /*border-style: solid;*/
     /*border-width: 2px;*/
     width: 250px;
-    margin: 0px auto;
+    margin: 0 auto;
 }
 
 .shop-item-color {
@@ -222,7 +230,6 @@ header h2 {
     float: right;
     width: 10px;
     height: 10px;
-    /*border: 1px solid black;*/
     border-radius: 3px;
     background-color: white;
 }
@@ -235,61 +242,543 @@ header h2 {
     right: 60px;
 }
 
-.shop-item-data{
+.shop-item-data {
     display: flex;
     float: right;
     text-align: center;
 }
 
-.shop-item-button{
+.shop-item-button {
     display: flex;
     float: right;
 }
-.shop-item-info td{
+
+.shop-item-info td {
     padding-left: 5px;
 }
 
-.shop-item-info button{
+.shop-item-info button {
     display: flex;
     border-radius: 3px;
     margin-top: 20px;
     width: 100px;
     height: 30px;
-    /*padding-left: 15px;*/
-    /*margin-bottom: 20px;*/
     align-items: center;
     justify-content: center;
     background-color: black;
     color: white;
 }
-.shop-item-info button:hover{
+
+.shop-item-info button:hover {
     color: black;
     background-color: white;
 }
 
-.shop-item-button-corsina{
+.shop-item-button-corsina {
     background-color: white;
 }
 
+.info-button{
+    display: none;
+}
+
 /*footer*/
-footer{
-    padding-top: 30px;
+footer {
+    padding: 15px 20px;
     height: 100px;
     background-color: black;
 }
 
-footer h2{
-    color:white;
-}
-footer p{
+footer h2 {
     color: white;
 }
-/*corsina*/
-/*.corsina-block{*/
-/*    border-style: solid;*/
-/*    border-width: 1px;*/
-/*    border-color: black;*/
-/*    width: 800px;*/
-/*    height: 500px;*/
-/*}*/
+
+footer p {
+    text-align: justify;
+    color: white;
+}
+
+@media only screen and (max-width: 1200px) {
+    .info-img{
+        max-width: 525px;
+    }
+
+    .info-text p{
+        justify-content: center;
+        /*max-width: 525px;*/
+    }
+
+    .menu li {
+        margin: 6px 18%;
+    }
+
+    .menu li:last-child {
+        margin: 0 18%;
+    }
+
+    .main-image {
+        margin-top: -45px;
+        width: 40%;
+        vertical-align: baseline;
+    }
+
+    .main-text {
+        margin-top: 0;
+        width: 100%;
+        border: none;
+    }
+
+    .main {
+        padding: 30px 5px;
+        margin: 5% 20px;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+    }
+
+    .main p {
+        margin: 35px 15px;
+    }
+
+    /*div.info-tr {*/
+    /*    flex-wrap: wrap;*/
+    /*    justify-content: center;*/
+    /*    min-height: 600px;*/
+    /*}*/
+
+    /*.info-img {*/
+    /*    display: block;*/
+    /*    width: 60%;*/
+    /*}*/
+
+    /*.info-img img {*/
+    /*    width: 100%;*/
+    /*    height: auto;*/
+    /*}*/
+
+    /*.info-text {*/
+    /*    width: 60%;*/
+    /*}*/
+
+    /*.info-text p {*/
+    /*    text-align: justify;*/
+    /*    padding: 50px 0;*/
+    /*}*/
+
+    .info ul {
+        padding: 0 100px;
+    }
+
+    .shop-item {
+        padding: 0 0 15px 0;
+    }
+}
+
+
+@media only screen and (max-width: 782px) {
+
+    .menu-item {
+        display: none;
+    }
+
+    .menu button {
+        position: absolute;
+        top: 10px;
+        right: 15%;
+        /*margin: -4px 65%;*/
+    }
+
+    .menu-item-quantity {
+        position: absolute;
+        top: 50px;
+        right: 13%;
+    }
+
+
+    .menu-burger {
+        color: white;
+        display: none;
+        position: absolute;
+        top: 55px;
+        width: 100%;
+        height: 100%;
+        background: black;
+    }
+
+    .menu-item-burger:hover {
+        border-bottom: none;
+    }
+
+    .menu button {
+        display: block;
+    }
+
+    .menu-burger li {
+        list-style: none;
+        /*margin-top: 18%;*/
+        text-align: center;
+        border-top: 1px solid white;
+        border-bottom: 1px solid white;
+        padding: 5px 10px;
+        width: 200px;
+        margin: 18% auto;
+        justify-content: space-around;
+    }
+
+
+    /*.menu-burger li:nth-child(2){*/
+    /*    border-top:1px solid white;*/
+    /*    border-bottom:1px solid white;*/
+    /*    padding: 5px 10px;*/
+    /*    width: 200px;*/
+    /*    margin: 55px auto;*/
+    /*}*/
+    .menu-burger a {
+        font-size: 25px;
+    }
+
+    a.menu-item {
+        color: white;
+    }
+
+
+    header .container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+
+    .menu-button-burger {
+        display: flex;
+        margin: 0 5%;
+        border: 1px solid white;
+        border-radius: 5px;
+    }
+
+    .menu-button-burger img {
+        padding: 5px 5px 5px 5px;
+        width: 19px;
+        height: 19px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .info-tr{
+        max-height: 800px;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .info-img{
+        width: 60%;
+        margin: 0 auto;
+        padding: 50px 0;
+    }
+
+    .info-text{
+        margin: 0 auto;
+    }
+    .info-text p{
+        padding: 0;
+    }
+
+
+
+    /*.info label{*/
+
+    /*}*/
+    /*.info-tr{*/
+    /*    flex-wrap: wrap;*/
+    /*    justify-content: center;*/
+    /*}*/
+
+    /*.info-img{*/
+    /*    display: block;*/
+    /*    width: 60%;*/
+    /*    margin-bottom: 50px;*/
+    /*}*/
+    /*.info-img img{*/
+    /*    margin-top: -200px;*/
+    /*    width: 100%;*/
+    /*}*/
+
+    /*.info-text{*/
+    /*    display: block;*/
+    /*    width: 60%;*/
+    /*}*/
+
+    /*.info-text p{*/
+    /*    padding-bottom: 100px;*/
+    /*}*/
+
+    /*.info-text {*/
+    /*    width: 60%;*/
+    /*}*/
+
+    /*.info-text p {*/
+    /*    text-align: justify;*/
+    /*    padding: 50px 0;*/
+    /*}*/
+
+    .main {
+        margin: 5% 10px;
+    }
+
+    .main-image {
+        padding: 15px;
+    }
+
+    .shop-item {
+        display: flex;
+        width: 80%;
+        margin: 25px 10%;
+        height: 340px;
+    }
+
+    .shop-item-photo {
+        padding: 0 20px;
+    }
+
+    .shop-item-info {
+        margin: 100px auto;
+    }
+
+    .shop-item-info p {
+        padding: 5px 0;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .menu-burger li {
+        margin: 20% auto;
+    }
+
+    .main p {
+        font-size: 16px;
+    }
+
+    .main-image {
+        margin-top: -5px;
+        width: 40%;
+        vertical-align: baseline;
+    }
+
+    .main {
+        margin-top: 10%;
+    }
+
+    .info-img {
+        width: 90%;
+    }
+
+    .info-text {
+        width: 90%;
+    }
+
+    .info-text p{
+        margin: 0;
+    }
+
+    .shop-item {
+        display: flex;
+        flex-direction: row;
+        height: 220px;
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    .shop-item-photo {
+        width: 7%;
+        /*margin: 0;*/
+        padding: 0;
+        margin: 0 auto;
+        /*margin-left: 15px;*/
+    }
+
+    .shop-item-photo img {
+        /*margin: -10px;*/
+        width: 120px;
+        height: 170px;
+        object-fit: cover;
+    }
+
+    .shop-item-info {
+        margin: 50px auto;
+        width: 50%;
+    }
+
+    .shop-item-info table {
+        margin: 0 auto;
+    }
+
+    .shop-item-info p {
+        padding: 0;
+        margin: 0;
+    }
+
+    .info-advice {
+        margin-left: -50px;
+    }
+
+    .info-advice h2 {
+        font-size: 17px;
+    }
+
+    .info-advice {
+        font-size: 15px;
+    }
+
+    .info li {
+        background: url("<%=request.getContextPath()%>/front/image/galkaForUl.png") no-repeat 0 4px;
+        background-size: 20px;
+        padding-left: 40px;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+
+    .info-button{
+        display: block;
+        margin: -57px auto;
+        width: 90%;
+        background-color: black;
+        border-bottom: solid;
+        border-radius: 5px;
+    }
+
+    .info-button img{
+        width: 20%;
+        height: 50px;
+    }
+
+    .info-button button{
+        background-color: black;
+        width: 100%;
+
+    }
+
+    .menu-burger li {
+        margin: 20% auto;
+    }
+
+
+    /*.menu-burger li {*/
+    /*    !*list-style: none;*!*/
+    /*    !*!*margin-top: 18%;*!*!*/
+    /*    !*text-align: center;*!*/
+    /*    !*border-top: 1px solid white;*!*/
+    /*    !*border-bottom: 1px solid white;*!*/
+    /*    !*padding: 5px 10px;*!*/
+    /*    !*width: 200px;*!*/
+    /*    margin: 40% auto;*/
+    /*    !*justify-content: space-around;*!*/
+    /*}*/
+
+    .menu button {
+        right: 20%;
+        /*margin: -4px 65%;*/
+    }
+
+    .menu-item-quantity {
+        right: 18%;
+    }
+
+
+    .main {
+        margin: 10% 10px;
+    }
+
+    .main p{
+        font-size: 14px;
+    }
+
+    .info-advice {
+        margin-left: -70px;
+    }
+
+    .shop-item-photo {
+        width: 40%;
+        /*margin: 0 5px;*/
+    }
+
+    .shop-item-info {
+        width: 50%;
+        margin-right: 10%;
+        justify-content: center;
+    }
+
+    .info-advice h2 {
+        font-size: 15px;
+    }
+
+    .info-advice {
+        font-size: 13px;
+    }
+
+    .info-text{
+        display: none;
+        margin-top: 60px;
+    }
+
+}
+
+@media only screen and (max-width: 440px) {
+    .info-text p{
+        padding: 0;
+        margin-top: 20px;
+        font-size: 13px;
+    }
+
+    .menu-burger li {
+        margin: 35% auto;
+    }
+
+    .info-text{
+        display: none;
+    }
+    .info-img{
+        padding: 0;
+    }
+
+    .info-tr{
+        margin-top: -60px;
+        margin-bottom: 80px;
+    }
+
+    /*.info-tr{*/
+    /*    margin-top: -60px;*/
+    /*}*/
+
+}
+
+@media only screen and (max-width: 405px) {
+    .shop-item {
+        display: flex;
+        flex-direction: column;
+        height: 400px;
+    }
+
+    .shop-item-photo {
+        width: 100%;
+        margin: 0 auto;
+        /*margin: 0 5px;*/
+    }
+
+    .shop-item-photo img {
+        width: 150px;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .shop-item-info {
+        width: 100%;
+        margin: 0 auto;
+        /*padding: 0;*/
+    }
+
+    .main-image {
+        padding: 5px;
+    }
+}
 

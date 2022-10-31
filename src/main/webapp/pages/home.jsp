@@ -8,27 +8,41 @@
     <style>
         <%@include file="/front/home/style.css" %>
     </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="<%=request.getContextPath()%>/front/image/logotip.jpg">
 </head>
 <body>
-<header>
+<header id="header">
     <div class="container">
         <h2>HotMeBy</h2>
         <ul class="menu">
             <li><a onclick="SmoothHeader('head')" class="menu-item">Главная</a></li>
             <li><a onclick="SmoothHeader('info')" class="menu-item">Информация</a></li>
             <li><a onclick="SmoothHeader('shop')" class="menu-item">Магазин</a></li>
+            <li>
+                <form action="<%=request.getContextPath()%>/hotMeBy.by" method="get">
+                    <input type="hidden" name="command" value="input_corsina">
+                    <input id="indexes" type="hidden" name="indexes">
+
+                    <button>
+                        <img class="corsina" src="<%=request.getContextPath()%>/front/image/corsina.jpg" alt="корзина">
+                    </button>
+                    <div id="menu-item-quantity" class="menu-item-quantity">0</div>
+                </form>
+            </li>
         </ul>
-        <form action="<%=request.getContextPath()%>/hotMeBy.by" method="get">
-            <input type="hidden" name="command" value="input_corsina">
-            <input id="indexes" type="hidden" name="indexes">
-            <button>
-                <img class="corsina" src="<%=request.getContextPath()%>/front/image/corsina.jpg" alt="корзина">
-            </button>
-        </form>
-        <div id="menu-item-quantity" class="menu-item-quantity">0</div>
+        <button class="menu-button-burger">
+            <img onclick="showBlockBurger()" src="<%=request.getContextPath()%>/front/image/burger.jpg" alt="burger">
+        </button>
     </div>
 </header>
+<div id="menu-burger" class="menu-burger">
+    <ul>
+        <li><a onclick="SmoothHeader('head')" class="menu-item-burger">Главная</a></li>
+        <li><a onclick="SmoothHeader('info')" class="menu-item-berger">Информация</a></li>
+        <li><a onclick="SmoothHeader('shop')" class="menu-item-burger">Магазин</a></li>
+    </ul>
+</div>
 <section id="head" class="main">
     <div class="container">
         <img src="<%=request.getContextPath()%>/front/image/mainPhoto.png" alt="hotmeby" class="main-image">
@@ -56,10 +70,17 @@
 </section>
 <section id="info" class="info">
     <div class="container">
-        <table>
-            <tr>
-                <td><img src="<%=request.getContextPath()%>/front/image/infoImage1.jpg" alt="info"></td>
-                <td>
+        <div>
+            <div class="info-tr">
+                <div class="info-img">
+                    <img src="<%=request.getContextPath()%>/front/image/infoImage1.jpg" alt="info">
+                </div>
+                <div class="info-button">
+                    <button onclick="showInfo(1)">
+                        <img  src="<%=request.getContextPath()%>/front/image/downStrelka.jpg" alt="show info">
+                    </button>
+                </div>
+                <div id="info-text-1" class="info-text">
                     <p>
                         Наши изделия соответствуют самым высоким стандартам качества и создаются специально для девушек,
                         учитывая все тонкости и нюансы.
@@ -73,23 +94,31 @@
                         Уникальная Программа лояльности <span>HotMeBy</span> – еще одна причина стать нашим постоянным
                         клиентом.
                     </p>
-                </td>
-            </tr>
-            <tr>
-                <td><img src="<%=request.getContextPath()%>/front/image/infoImage2.jpg" alt="info2"></td>
-                <td><p>В нижнем белье от <span>HotMeBy</span> вы получаете наслаждение от безупречного комфорта и
-                    качества. Оно не
-                    наделено какими-то демографическими особенностями и подходит для девушек с любыми типами фигур.
-                    Здесь
-                    огромное количество потрясающих дизайнов, которые заставят вас почувствовать себя сексуальной, и
-                    много разных стилей, которые остаются комфортными и поддерживают вас в течение дня. Этот бренд
-                    создан для того, чтобы каждая девушка смогла чувствовать себя великолепно и ощутить дополнительный
-                    заряд уверенности.</p>
-                </td>
-            </tr>
-        </table>
+                </div>
+            </div>
+            <div class="info-tr">
+                <div class="info-img">
+                    <img src="<%=request.getContextPath()%>/front/image/infoImage2.jpg" alt="info2">
+                </div>
+                <div class="info-button">
+                    <button onclick="showInfo(2)">
+                        <img src="<%=request.getContextPath()%>/front/image/downStrelka.jpg" alt="show info">
+                    </button>
+                </div>
+                <div id="info-text-2" class="info-text">
+                    <p>В нижнем белье от <span>HotMeBy</span> вы получаете наслаждение от безупречного комфорта и
+                        качества. Оно не
+                        наделено какими-то демографическими особенностями и подходит для девушек с любыми типами фигур.
+                        Здесь
+                        огромное количество потрясающих дизайнов, которые заставят вас почувствовать себя сексуальной, и
+                        много разных стилей, которые остаются комфортными и поддерживают вас в течение дня. Этот бренд
+                        создан для того, чтобы каждая девушка смогла чувствовать себя великолепно и ощутить дополнительный
+                        заряд уверенности.</p>
+                </div>
+            </div>
+        </div>
         <label>Как оформить заказ на сайте?</label>
-        <ul>
+        <ul class="info-advice">
             <li>
                 <h2>Добавьте понравившиеся товары в корзину</h2>
                 Выберите товар, который Вам понравился и нажмите кнопку
@@ -116,13 +145,11 @@
         <input id="quantity" type="hidden" name="quantity" value="${quantity}">
         <div class="shop-items">
             <c:forEach var="item" items="${items}">
-                <%--                <input type="hidden" name="quantity" value="${items.size()}">--%>
                 <div class="shop-item">
                     <div class="shop-item-photo">
                         <img src="${item.getPhotoUrl()}" alt="shop">
                     </div>
                     <div class="shop-item-info">
-                        <!--                    цвет,цена,материал,-->
                         <h3 class="shop-item-name">${item.getName()}</h3>
                         <table>
                             <tr>
@@ -150,8 +177,11 @@
                                     </button>
                                 </td>
                                 <td>
-
-                                    <button class="shop-item-button">Купить</button>
+                                    <form action="<%=request.getContextPath()%>/hotMeBy.by" method="get">
+                                        <input type="hidden" name="command" value="input_corsina">
+                                        <input type="hidden" name="indexes" value="${item.getId()}">
+                                        <button class="shop-item-button">Купить</button>
+                                    </form>
                                 </td>
                             </tr>
                         </table>
@@ -161,13 +191,6 @@
         </div>
     </div>
 </section>
-<%--<section class="corsina">--%>
-<%--    <div class="container">--%>
-<%--        <div class="corsina-block">--%>
-
-<%--        </div>--%>
-<%--    </div>--%>
-<%--</section>--%>
 <footer>
     <div class="container">
         <h2>HotMeBy</h2>
