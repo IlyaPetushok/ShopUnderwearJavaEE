@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Asus
-  Date: 11.09.2022
-  Time: 23:40
-  To change this template use File | Settings | File Templates.
---%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
@@ -16,113 +9,147 @@
     <style>
         <%@include file="/front/corsina/style.css"%>
     </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="<%=request.getContextPath()%>/front/image/logotip.jpg">
 </head>
 <body>
-<header class="header">
+<header id="header" class="header">
     <div class="container">
         <h2>HotMeBy</h2>
         <ul class="menu">
-            <li><a class="header-item" href="">Главная</a></li>
-            <li><a class="header-item" href="">Информация</a></li>
-            <li><a class="header-item" href="">Магазин</a></li>
+            <li><a class="header-item" href="<%=request.getContextPath()%>/hotMeBy.by#head">Главная</a></li>
+            <li><a class="header-item" href="<%=request.getContextPath()%>/hotMeBy.by#info">Информация</a></li>
+            <li><a class="header-item" href="<%=request.getContextPath()%>/hotMeBy.by#shop">Магазин</a></li>
         </ul>
+        <button class="menu-button-burger">
+            <img onclick="showBlockBurger()" src="<%=request.getContextPath()%>/front/image/burger.jpg" alt="burger">
+        </button>
     </div>
 </header>
-<section class="items-corsina">
-    <div class="container-for-item">
-        <div class="shop-items">
-            <input id="quantity" type="hidden" name="quantity" value="${quantity}">
-            <c:forEach var="item" items="${items}">
-                <div class="item-corsina">
-                    <div class="item-corsina-img">
-                        <img src="${item.getPhotoUrl()}" alt="">
-                    </div>
-                    <!--            цена ,назв ,материал ,цвет ,кнопка удалить и
-                                    мб количество -->
-                    <div class="item-info">
-                        <h2>${item.getName()}</h2>
-                        <table class="item-table-info">
-                            <tr>
-                                <td>Материал:</td>
-                                <td>${item.getMaterial()}</td>
-                            </tr>
-                            <tr>
-                                <td>Цвет:</td>
-                                <td>
+<div id="menu-burger" class="menu-burger">
+    <ul>
+        <li><a  class="menu-item-burger" href="<%=request.getContextPath()%>/hotMeBy.by#head">Главная</a></li>
+        <li><a  class="menu-item-berger" href="<%=request.getContextPath()%>/hotMeBy.by#info">Информация</a></li>
+        <li><a  class="menu-item-burger" href="<%=request.getContextPath()%>/hotMeBy.by#shop">Магазин</a></li>
+    </ul>
+</div>
+<section id="shop" class="items-corsina-order">
+    <div class="shop-items">
+        <input id="quantity" type="hidden" name="quantity" value="${quantity}">
+        <c:forEach var="item" items="${items}">
+            <div class="item-corsina">
+                <div class="item-corsina-img">
+                    <img src="${item.getPhotoUrl()}" alt="">
+                </div>
+                <!--            цена ,назв ,материал ,цвет ,кнопка удалить и
+                                мб количество -->
+                <div class="item-info">
+                    <h2>${item.getName()}</h2>
+                    <div class="info-item-and-button">
+                        <div class="item-data">
+
+                            <div class="item-info-material">
+                                <div><p>Материал</p></div>
+                                <div><p>${item.getMaterial()}</p></div>
+                            </div>
+
+                            <div class="item-info-color">
+                                <div>
+                                    <p>Цвет</p>
+                                </div>
+
+                                <div class="item-color">
                                     <p class="shop-item-data">
-                                        <input id="shop-input-color-${item.getId()}" type="hidden" name="item-color" value="${item.getColor()}">
+                                        <input id="shop-input-color-${item.getId()}" type="hidden" name="item-color"
+                                               value="${item.getColor()}">
                                     <div id="item-color-${item.getId()}" class="shop-item-color" data-title="Чёрный"
                                          value="white"></div>
                                     </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="quantity-item">
-                                        <button onclick="priceAdd(${item.getId()})">+</button>
+                                </div>
 
-                                        <label>
-                                            <input id="button-quantity-${item.getId()}" type="text" name="quantity" value="1">
-                                        </label>
+                            </div>
+                            <div class="item-info-quantity">
+                                <div class="quantity-item">
+                                    <button onclick="priceAdd(${item.getId()})">+</button>
 
-                                        <button onclick="priceDeduct(${item.getId()})">-</button>
-                                    </div>
-                                </td>
-                                <td>
+                                    <label>
+                                        <input id="button-quantity-${item.getId()}" type="text" name="quantity"
+                                               value="1">
+                                    </label>
+
+                                    <button onclick="priceDeduct(${item.getId()})">-</button>
+                                </div>
+                                <div class="item-info-price">
                                     <input id="priceNow-${item.getId()}" type="hidden" value="${item.getPrice()}">
-                                    <input id="price-${item.getId()}" type="hidden" name="price" value="${item.getPrice()}">
-                                    <div class="price">
-                                        <label id="price-for-quantity-${item.getId()}" class="item-price">${item.getPrice()}</label>
+                                    <input id="price-${item.getId()}" type="hidden" name="price"
+                                           value="${item.getPrice()}">
+                                    <div id="price" class="price">
+                                        <label id="price-for-quantity-${item.getId()}"
+                                               class="item-price">${item.getPrice()}</label>
                                         <p>б.р</p>
                                     </div>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div class="button-option-item">
-                        <button>Удалить</button>
-                        <button>Купить</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-button">
+                            <div>
+                                <button>Удалить</button>
+                            </div>
+                            <div class="button-corsina" id="button_by">
+                                <button>Купить</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </c:forEach>
-
-        </div>
-        <div class="items-all-corsina">
-            <h1>Корзина <img src="<%=request.getContextPath()%>/front/image/corsina-black.png" alt=""></h1>
-            <table>
-                <tr>
-                    <td><h2>Итого</h2></td>
-                    <td>
-                        <div class="price"><p id="price-all-corsina" class="price-all-corsina">0</p>
-                            <label class="price-all-corsina">б.р</label>
-                        </div>
-                    </td>
-                </tr>
-                <tr class="quantity-all-corsina">
-                    <td><p>Товары кол-во</p></td>
-                    <td><label id="quantity-all-corsina" class="quantity-all-corsina">0</label></td>
-                </tr>
-            </table>
-            <p class="corsina-button">
-                <button>Заказать</button>
-            </p>
-        </div>
+            </div>
+        </c:forEach>
     </div>
-    <div class="user-info">
-        <button>
-            <img src="shop-item/images.png" alt="exit">
-        </button>
-        <h2>Оформление заказа</h2>
-        <form action="">
-            <input type="text" name="name" placeholder="ФИО">
-            <input type="text" name="post" placeholder="Отделение почты">
-            <input type="text" name="telephone" placeholder="Номер телефона">
-            <input type="submit" value="Отправить">
-        </form>
+    <div id="items-all-corsina" class="items-all-corsina">
+        <h1>Корзина <img src="<%=request.getContextPath()%>/front/image/corsina-black.png" alt=""></h1>
+        <div class="items-all-corsina-info">
+            <div class="corsina-info">
+                <div>
+                    <h2>Итоговая сумма</h2>
+                </div>
+                <div>
+                    <div class="price"><p id="price-all-corsina" class="price-all-corsina">0</p>
+                        <label class="price-all-corsina">б.р</label>
+                    </div>
+                </div>
+            </div>
+            <div class="corsina-info">
+                <div>
+                    <p>Кол-во товаров</p>
+                </div>
+                <div>
+                    <label id="quantity-all-corsina" class="quantity-all-corsina">0</label>
+                </div>
+            </div>
+        </div>
+        <p class="corsina-button">
+            <button onclick="showFormUser()">Заказать</button>
+        </p>
     </div>
 </section>
-<footer>
+<%--<--%>
+<%--</div>--%>
+<%--            <div id="user-info" class="user-info">--%>
+<%--                <button>--%>
+<%--                    <img src="<%=request.getContextPath()%>/front/image/crosExit.png" alt="exit"--%>
+<%--                         onclick="showFormUser()">--%>
+<%--                </button>--%>
+<%--                <h2>Оформление заказа</h2>--%>
+<%--                <form action="<%=request.getContextPath()%>/hotMeBy.by">--%>
+<%--                    <input id="byItems" type="hidden" name="item">--%>
+<%--                    <input type="hidden" name="command" value="create_order_command">--%>
+<%--                    <input type="text" name="name" placeholder="ФИО">--%>
+<%--                    <input type="text" name="post" placeholder="Отделение почты">--%>
+<%--                    <input type="text" name="telephone" placeholder="Номер телефона">--%>
+<%--                    <input type="submit" value="Отправить">--%>
+<%--                </form>--%>
+<%--            </div>--%>
+<%--</section>--%>
+<footer id="footer">
     <div class="container">
         <h2>HotMeBy</h2>
         <p>© 2022 ООО «HotMeBy». HotMeBy — магазин женского белья. Заказы online принимаются круглосуточно и без

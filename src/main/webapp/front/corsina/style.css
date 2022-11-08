@@ -5,53 +5,72 @@
 
 @font-face {
     font-family: Roboto;
-    src: url("/pageShopHead/fonts/Roboto.ttf");
+    src: url("/front/fonts/Roboto.ttf");
 }
 
 @font-face {
     font-family: Roboto;
-    src: url("/pageShopHead/fonts/Robotobold.ttf");
+    src: url("/front/fonts/Robotobold.ttf");
     font-weight: bold;
 }
 
 body {
+    /*min-height: 800px;*/
     font-family: Roboto, sans-serif;
+}
+
+.menu-burger {
+    display: none;
+}
+
+.menu-button-burger{
+    display: none;
+}
+
+.menu-burger a{
+    color: white;
+    text-decoration: none;
 }
 
 .container {
     max-width: 1200px;
-    margin: 0px auto;
+    margin: 0 auto;
 }
 
 /*header*/
-.header{
-    padding: 14px 0px;
+.header {
+    padding: 14px 0;
     background-color: black;
     border-bottom: 7px solid black;
     color: white;
     /*margin-bottom: 25px;*/
 }
-header .container{
+
+header .container {
     display: flex;
     flex-direction: row;
 }
-.header ul{
+
+.header ul {
     display: flex;
 }
-.header li{
+
+.header li {
     list-style: none;
 }
-.header a{
+
+.header a {
     color: white;
     text-decoration: none;
 }
-.header-item:hover{
+
+.header-item:hover {
     border-bottom: solid white 1px;
 }
 
 header h2 {
     color: white;
-    margin: 0px 40px;
+    margin: 0 40px;
 }
 
 .menu li {
@@ -60,55 +79,80 @@ header h2 {
 
 
 /*item-corsina*/
-
-
-.item-corsina{
-    display: flex;
-    /*padding: 20px 0px;*/
-    border-radius: 25px;
-    /*margin: 25px 0px;*/
-    background-color: lightgrey;
-    width: 80%;
-    margin: 25px auto;
-    height: 330px;
+.shop-items{
+    min-height: 560px;
+    width: 60%;
 }
 
-.item-corsina-img img{
-    margin-left: 30px;
-    /*border: solid black 1px;*/
-    border-radius: 40px;
+.items-corsina-order{
     display: flex;
-    padding: 20px 0px;
-    width: 230px;
-    height: 290px;
+    width: 100%;
+}
+
+
+.item-corsina {
+    display: flex;
+    width: 100%;
+    height: 300px;
+    background-color: lightgray;
+    border-radius: 25px;
+    margin: 30px 50px;
+}
+
+.item-corsina-img {
+    width: 200px;
+    height: 270px;
+    margin: 0 20px;
+}
+
+.item-corsina-img img {
+    width: 200px;
+    height: 270px;
+    padding: 15px 0;
+    border-radius: 32px;
     object-fit: cover;
 }
 
-.item-corsina h2{
-    padding: 20px;
-    margin: 0px auto;
-    height: 20px;
+
+.item-info {
+    margin: 15px 0;
+    width: 100%;
 }
 
-.item-corsina table{
-    margin: 10px auto;
-    /*border: 1px solid black;*/
+.item-info h2 {
+    margin-left: -80px;
+    text-align: center;
 }
 
-tr{
-    /*border: 1px solid black;*/
+.info-item-and-button {
+    display: flex;
 }
 
-.item-corsina td{
-    width: 200px;
-    padding: 20px 0;
-    /*border: 1px solid black;*/
+.item-data {
+    width: 60%;
+    margin: 0 5%;
+}
+
+.item-data p {
+    font-size: 20px;
+}
+
+.item-info-material {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0;
+}
+
+.item-info-color {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0;
 }
 
 .shop-item-color {
     display: flex;
     /*float: right;*/
-    margin: 0 auto;
+    margin: -7px auto;
     width: 30px;
     height: 30px;
     /*border: 1px solid black;*/
@@ -116,35 +160,21 @@ tr{
     background-color: white;
 }
 
-.shop-item-color:hover::after {
-    content: attr(data-title);
-    font-size: 12px;
-    position: relative;
-    top:5px;
-    right: 60px;
-}
 
-.shop-item-data{
+.item-info-quantity {
     display: flex;
-    /*float: right;*/
-    text-align: center;
+    justify-content: space-between;
+    padding: 20px 0;
 }
 
 
-
-.item-info{
-    width: 460px;
-    padding: 0 20px;
-    text-align: center;
-}
-.quantity-item{
+.quantity-item {
     display: flex;
-    flex-direction: row;
 }
 
 
-.quantity-item input{
-    padding: 0 15px;
+.quantity-item input {
+    padding: 7px 15px;
     width: 30px;
     font-size: 25px;
     text-align: center;
@@ -153,153 +183,194 @@ tr{
     background-color: lightgrey;
 }
 
-.quantity-item button{
+.quantity-item button {
     color: white;
     background-color: black;
-    width: 30px;
-    text-align: center;
+    width: 40px;
+    height: 40px;
     font-size: 20px;
-    padding: 0 10px;
-    margin: 0 auto;
     border-radius: 50px;
     border: none;
 }
 
-.item-price{
+
+.item-price {
     font-size: 22px;
 }
 
-.button-option-item{
-    padding-top: 70px;
-    /*padding-right: 70px;*/
-    /*padding-left: 70px;*/
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    margin-left: -15px;
+.price {
+    display: flex
+}
+.price label{
+    padding: 0 10px;
 }
 
-.button-option-item button{
-    font-size: 20px;
-    text-align: center;
+.item-info-price{
+    margin-top: 8px;
+}
+.item-button {
+    margin-top: 15px;
+    width: 30%;
+}
+
+.item-button div{
+    display: flex;
+    justify-content: center;
+}
+
+.item-button button{
+    margin: 17px auto;
+    padding: 30px 0;
     border-radius: 25px;
-    color: white;
+    width: 160px;
     background-color: black;
-    width: 180px;
-    height: 80px;
-    margin-bottom: 40px;
+    color: white;
+    justify-content: center;
+
 }
 
-.container-for-item
-{
-    display: flex;
-    flex-direction: row;
-    max-width: 1800px;
-    /*float: left;*/
-}
-.shop-items{
-    margin-left: -50px;
-    width: 80%;
-    /*padding-right: 100px;*/
-}
+/*.item-corsina-order{*/
+/*    position: sticky;*/
+/*    top:10px;*/
+/*    right: 10%;*/
+/*    width: 20%;*/
+/*    height: 300px;*/
+/*    background-color: lightgrey;*/
+/*}*/
 
 .items-all-corsina{
+    /*margin-top: 30px;*/
     position: sticky;
-    top:10px;
-    right: 50px;
-    margin-top: 25px;
-    margin-bottom: 100px;
-    margin-left: -70px;
-    background-color: lightgrey;
+    top:30px;
+    margin-top: 30px;
+    /*right: 10%;*/
     width: 25%;
-    height: 330px;
+    height: 300px;
+    margin-left: 10%;
+    /*margin: 0 auto;*/
+    /*justify-content: center;*/
+    background-color: lightgrey;
     border-radius: 25px;
-    /*height: 100px;*/
-}
-
-.items-all-corsina img{
-    width: 30px;
-    height: 30px;
-}
-
-.items-all-corsina table{
-    /*text-align: center;*/
-    /*margin: 0 auto;*/
-    /*border: 1px solid black;*/
-    margin: 20px auto;
-
-}
-.items-all-corsina td{
-    /*text-align: center;*/
-    /*margin: 0 auto;*/
-    padding: 20px 0;
-    float: left;
-    /*text-align: center;*/
-    /*border: 1px solid black;*/
-    width: 150px;
-}
-
-.items-all-corsina td:nth-child(2){
-    text-align: right;
 }
 
 .items-all-corsina h1{
-    margin-top: 20px;
-    font-size: 30px;
     text-align: center;
+    padding: 20px 0;
 }
 
-.items-all-corsina button{
-    /*margin-top: -10px;*/
-    border-radius: 25px;
-    padding: 15px ;
-    text-align: center;
-    background-color: black;
-    color: white;
-    width: 60%;
-    font-size: 20px;
-}
-.corsina-button{
-    text-align: center;
+.items-all-corsina img{
+    /*padding-top: 10px;*/
+    width: 25px;
+    height: 25px;
 }
 
-
-
-.quantity-all-corsina{
-    font-size: 18px;
+.items-all-corsina-info{
+    display: flex;
+    flex-direction: column;
 }
 
-.price-all-corsina{
-    font-size: 20px;
-    font-weight: bold;
+.corsina-info{
+    display: flex;
+    justify-content: space-between;
+    margin: 25px 20px;
 }
-
 
 .price{
+    font-size: 25px;
+}
+
+.quantity-all-corsina{
+    padding-right: 50px;
+}
+
+.corsina-button{
     display: flex;
-    margin-left: 60px;
-}
-.price p{
-    padding-left: 10px;
-    font-size: 22px;
+    justify-content: center;
 }
 
-.price label{
-    padding-left: 10px;
-    font-size: 23px;
+.corsina-button button{
+    padding: 15px 0;
+    width: 150px;
+    background-color: black;
+    color: white;
+    border-radius: 25px;
+    font-size: 20px;
+    margin-bottom: 20px;
 }
 
-/*.item-img{*/
-/*    width: 220px;*/
-/*    padding: 5px 0;*/
-/*    border: solid;*/
-/*    */
+
+
+/*!*user-info*!*/
+
+/*.user-info{*/
+/*    display: none;*/
+/*    !*background-color: lightgrey;*!*/
+/*    background-color: white;*/
+/*    border-radius: 25px;*/
+/*    position: fixed;*/
+/*    top: 200px;*/
+/*    left:35%;*/
+/*    width: 500px;*/
+/*    height: 320px;*/
 /*}*/
 
-/*footer*/
+/*.user-info h2{*/
+/*    text-align: center;*/
+/*    margin: 20px 0px;*/
+/*}*/
+
+/*.user-info input{*/
+/*    display: flex;*/
+/*    margin: 30px auto;*/
+/*    width: 350px;*/
+/*    !*background-color: black;*!*/
+/*    !*color: white;*!*/
+/*    height: 25px;*/
+/*    border-radius: 5px;*/
+/*    outline: none;*/
+/*    padding: 0px 20px;*/
+/*}*/
+
+
+/*.user-info input:nth-child(6){*/
+/*    width: 200px;*/
+/*    !*padding: 10px 0 10px 0;*!*/
+/*    background-color: black;*/
+/*    color: white;*/
+/*    !*padding: 10px 0;*                                                                                                                                                                                                                                                                                                                                                 /*/
+/*    height: 30px;*!*/
+/*    justify-content: center;*/
+/*}*/
+
+/*.user-info button{*/
+/*    position: absolute;*/
+/*    background-color: white;*/
+/*    border: none;*/
+/*    !*float: right;*!*/
+/*    top: 5px;*/
+/*    right: 0px;*/
+/*    margin: 10px 20px;*/
+/*}*/
+/*.user-info img{*/
+/*    width: 20px;*/
+/*    height: 20px;*/
+/*}*/
+
+
+/*!*footer*!*/
 footer{
-    /*margin-top: 50px;*/
+    display: flex;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    /*margin-bottom: -100px;*/
+    /*position: absolute;*/
+    /*bottom: 0;*/
+    width: 100%;
+    float: bottom;
     padding-top: 30px;
+    /*position:  relative;*/
+    /*bottom: 0;*/
     height: 100px;
     background-color: black;
 }
@@ -311,58 +382,494 @@ footer p{
     color: white;
 }
 
-/*user-info*/
 
-.user-info{
-    /*display: block;*/
-    /*background-color: lightgrey;*/
-    background-color: white;
-    border-radius: 25px;
-    position: fixed;
-    top: 200px;
-    left:35%;
-    width: 500px;
-    height: 320px;
+@media only screen and (max-width:1315px){
+    .info-item-and-button{
+        display: flex;
+        flex-direction: column;
+    }
+    .item-data{
+        width: 90%;
+    }
+    .item-button{
+        display: flex;
+        width: 92%;
+        justify-content: space-between;
+        margin-top: -15px;
+        margin-left: 20px;
+    }
+    .corsina-info h2{
+        font-size: 20px;
+    }
+    .price{
+        font-size: 20px;
+    }
+    .item-button div{
+        display: flex;
+        justify-content: space-between;
+    }
+    .item-button button{
+        width: 130px;
+    }
+    .item-info-material{
+        padding: 15px 0;
+    }
+    .item-info-color{
+        padding: 15px 0;
+    }
+    .item-button button{
+        padding: 15px 0;
+    }
 }
 
-.user-info h2{
-    text-align: center;
-    margin: 20px 0px;
+@media only screen and (max-width: 1150px) {
+    .corsina-info{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .corsina-info{
+        text-align: center;
+    }
+
+    .price{
+        justify-content: center;
+    }
+    .quantity-all-corsina{
+        padding: 0;
+    }
+
+    .corsina-info:nth-child(2){
+        margin-top: -5px;
+    }
 }
 
-.user-info input{
-    display: flex;
-    margin: 30px auto;
-    width: 350px;
-    /*background-color: black;*/
-    /*color: white;*/
-    height: 25px;
-    border-radius: 5px;
-    outline: none;
-    padding: 0px 20px;
+@media only screen and (max-width:1050px) {
+    .item-info h2{
+        /*padding: 10px 0;*/
+        /*margin-top: 30px;*/
+        margin-left: -40px;
+    }
+    .item-info-material{
+        margin-left: -40px;
+        flex-direction: column;
+        text-align: center;
+    }
+    .item-info-color{
+        margin-left: -40px;
+        flex-direction: column;
+        text-align: center;
+    }
+    .item-info-price{
+        margin-right: 45px;
+    }
+
+    .item-color{
+        margin-top: 20px;
+    }
+    .item-corsina{
+        height: 355px;
+    }
+    .item-info-quantity{
+        justify-content: space-between;
+    }
+    /*.item-info-quantity{*/
+    /*    margin-top: 20px;*/
+    /*    margin-left: -217px;*/
+    /*    width: 155%;*/
+    /*}*/
+    .item-button{
+        margin-left: -200px;
+    }
+
+    .item-button div:nth-child(2){
+        position: relative;
+        left: 190px;
+    }
 }
 
+@media only screen and (max-width: 950px) {
+    .item-info h2{
+        padding: 30px 0;
+    }
+    .item-info-quantity{
+        margin-top: 20px;
+        margin-left: -210px;
+    }
 
-.user-info input:nth-child(4){
-    width: 200px;
-    /*padding: 10px 0 10px 0;*/
-    background-color: black;
-    color: white;
-    /*padding: 10px 0;*/
-    height: 30px;
-    justify-content: center;
+    .item-corsina{
+        height: 450px;
+    }
+
+    .item-info-quantity{
+        display: flex;
+        justify-content: normal;
+    }
+
+    .item-info-quantity .price{
+        position: absolute;
+        left:48%;
+    }
+
+    /*.corsina-info .price{*/
+    /*    text-align: center;*/
+    /*}*/
+
+    .item-button div:nth-child(2){
+        position: absolute;
+        left: 46%;
+        margin-right: 100px;
+    }
+
 }
 
-.user-info button{
-    position: absolute;
-    background-color: white;
-    border: none;
-    /*float: right;*/
-    top: 5px;
-    right: 0px;
-    margin: 10px 20px;
+@media only screen and (max-width:900px) {
+    .header ul{
+        display: none;
+    }
+
+    /*.menu button {*/
+    /*    position: absolute;*/
+    /*    top: 10px;*/
+    /*    right: 15%;*/
+    /*    !*margin: -4px 65%;*!*/
+    /*}*/
+
+    .menu-button-burger{
+        display: block;
+    }
+    .menu-burger{
+        color: white;
+        display: none;
+        position: absolute;
+        top: 55px;
+        width: 100%;
+        height: 100%;
+        background: black;
+    }
+
+    .menu-button-burger {
+        display: flex;
+        position: absolute;
+        right: 10px;
+        background-color: black;
+        margin: 0 5%;
+        border: 1px solid white;
+        border-radius: 5px;
+    }
+
+    .menu-button-burger img {
+        padding: 5px 5px 5px 5px;
+        width: 19px;
+        height: 19px;
+    }
+
+    .menu-burger li {
+        list-style: none;
+        /*margin-top: 18%;*/
+        text-align: center;
+        border-top: 1px solid white;
+        border-bottom: 1px solid white;
+        padding: 5px 10px;
+        width: 200px;
+        margin: 30% auto;
+        justify-content: space-around;
+    }
+
+    .menu-burger a {
+        font-size: 25px;
+    }
 }
-.user-info img{
-    width: 20px;
-    height: 20px;
+
+@media only screen and (max-width:700px){
+    .menu-burger li{
+        margin: 20% auto;
+    }
+}
+
+@media only screen and (max-width: 830px) {
+    .items-all-corsina{
+        display: block;
+        position: absolute;
+        margin: 30px auto;
+        right: 0;
+        left: 0;
+        width: 87.5%;
+        top:50px;
+        /*padding: 0 10\0px;*/
+        /*margin-left: -569px;*/
+        /*margin: 0 auto;*/
+        height: 180px;
+    }
+
+    .items-all-corsina h1{
+        padding: 5px 0;
+    }
+
+    .shop-items{
+        margin: 0 auto;
+        margin-top: 200px;
+        width: 87.5%;
+    }
+
+    .item-corsina{
+        margin: 20px 0;
+        height: 300px;
+    }
+
+    .item-info h2{
+        padding: 0;
+    }
+    .item-info-material{
+        flex-direction: row;
+        padding: 15px 30px;
+    }
+    .item-info-color{
+        flex-direction: row;
+        padding: 15px 30px;
+    }
+
+    .item-info-quantity{
+        margin-top: -10px;
+        margin-left: -15px;
+        /*width: 300px;*/
+        justify-content: space-between;
+    }
+    .item-info-quantity .price{
+        position: static;
+        /*margin-left: 100px;*/
+        /*margin-left: 220px;*/
+    }
+
+    .item-button div:nth-child(2){
+        position: static;
+        /*margin-right: 100px;*/
+    }
+
+    .item-button{
+        margin: -10px 0;
+        /*margin: 0;*/
+    }
+
+    .shop-item-color{
+        margin-top: -22px;
+    }
+
+    .item-button div:nth-child(2){
+        /*position: absolute;*/
+        /*left: 46%;*/
+        margin-right: 0;
+    }
+
+    .corsina-info{
+        flex-direction: row;
+        margin: 15px 20px;
+    }
+
+    .corsina-button button{
+        padding: 8px 0;
+    }
+    .quantity-all-corsina{
+        margin-right: 10px;
+    }
+}
+
+@media only screen and (max-width:715px){
+    .item-corsina{
+        height: 250px;
+    }
+    .item-corsina-img img{
+        width: 130px;
+        height: 200px;
+        margin: 10px 0;
+    }
+
+    .item-info h2{
+        margin-top: 15px;
+        font-size: 18px;
+    }
+
+    .info-item-and-button p{
+        font-size: 16px;
+    }
+
+    .item-info-material{
+        padding: 8px 30px;
+    }
+
+    .quantity-item button{
+        width: 30px;
+        height: 30px;
+    }
+    .quantity-item input{
+        font-size: 18px;
+    }
+    .item-info-quantity{
+        padding: 10px 0;
+    }
+
+    .item-info-price label{
+        font-size: 18px;
+    }
+
+    .item-button button{
+        margin: 8px 0;
+        padding: 8px 0;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .item-corsina{
+        height: 230px;
+    }
+
+    .item-corsina-img img{
+        width: 100px;
+        height: 140px;
+        margin: 10px 0;
+    }
+
+    .item-info h2{
+        margin-top: 15px;
+        font-size: 15px;
+    }
+
+    .info-item-and-button p{
+        font-size: 13px;
+    }
+
+    .item-info-material{
+        padding: 8px 30px;
+    }
+
+    .quantity-item button{
+        width: 30px;
+        height: 30px;
+    }
+    .quantity-item input{
+        font-size: 18px;
+    }
+
+    .item-info-price label{
+        font-size: 14px;
+    }
+    .item-info-price{
+        margin-top: 2px;
+        margin-right: 20px;
+        padding: 5px 10px;
+    }
+
+    .shop-item-color{
+        width: 20px;
+        height: 20px;
+    }
+
+    .item-info-quantity{
+        padding: 10px 0;
+    }
+
+
+    .item-button button{
+        margin: 8px 0;
+        padding: 8px 0;
+    }
+    .item-button{
+        /*margin-left: -120px;*/
+        /*justify-content: center;*/
+        /*margin: ;*/
+        /*width: 135%;*/
+        /*justify-content: space-around;*/
+    }
+    .item-button div{
+        /*margin: 0 20%;*/
+    }
+
+    .item-button div:nth-child(1){
+        /*margin-right: 10px;*/
+        /*position: relative;*/
+        /*right: 0;*/
+        /*margin-left: 60%;*/
+        /*margin-right: 50%;*/
+        margin-left: -140px;
+    }
+}
+
+@media only screen and (max-width:450px) {
+    .item-info-material div:nth-child(1){
+        margin-right: 25px;
+    }
+    .item-corsina{
+        height: 240px;
+    }
+}
+@media only screen and (max-width:410px)  {
+    .item-corsina{
+        display: flex;
+        flex-direction: column;
+        height: 450px;
+    }
+    .item-corsina-img{
+        margin: 0 auto;
+        width: 170px;
+    }
+
+    .item-corsina-img img{
+        /*margin: 0 auto;*/
+        width: 170px;
+        height: 210px;
+        margin: 10px 0;
+    }
+
+    .item-info{
+        margin-top: -20px;
+    }
+    .item-info h2{
+        margin: 0;
+        font-size: 18px;
+    }
+
+    .item-data{
+        width: 92%;
+        margin: 0 10%;
+    }
+    .item-data p{
+        font-size:15px;
+    }
+
+    .item-info-price label{
+        font-size: 15px;
+    }
+
+    .item-button{
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .item-button button{
+        margin: 0 auto;
+        font-size: 10px;
+        width: 100px;
+    }
+
+    .item-button div:nth-child(1){
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-width:340px) {
+    .items-all-corsina label{
+        font-size: 15px;
+    }
+
+    .corsina-info h2{
+        font-size: 15px;
+    }
+
+    .corsina-info p:nth-child(1){
+        font-size: 15px;
+    }
+
+    .corsina-info p{
+        font-size: 13px;
+    }
 }

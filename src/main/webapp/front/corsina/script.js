@@ -43,6 +43,39 @@ function priceShowCorsina() {
 
 }
 
+
+
+function showBlockBurger() {
+    let header = document.getElementById("header");
+    let burgerBlock = document.getElementById("menu-burger");
+    // let corsina=document.getElementById("items-all-corsina");
+    // let button=document.getElementById("button_by");
+    // let button=di
+    let footer=document.getElementById("footer");
+    let shop=document.getElementById("shop");
+    // let price=document.getElementById("price");
+    if (burgerBlock.style.display === "none") {
+        // price.style.display="none";
+        shop.style.display="none";
+        footer.style.display="none";
+        // corsina.style.display="none";
+        // button.style.display="none";
+        burgerBlock.style.display = "block";
+        header.style.width = "100%";
+        header.style.top = "0";
+        header.style.position = "fixed";
+        burgerBlock.style.position = "fixed";
+    } else {
+        // price.style.display="";
+        footer.style.display="block";
+        shop.style.display=""
+        // corsina.style.display="block";
+        // button.style.display="block";
+        header.style.position = "";
+        burgerBlock.style.display = "none";
+    }
+}
+
 function priceAdd(number) {
     let priceInp = document.getElementById("price-" + number + "");
     if (priceInp) {
@@ -64,6 +97,22 @@ function priceDeduct(number) {
             button.value = parseInt(button.value) - 1;
             price = price * button.value;
             showPrice(price, number, false);
+        }
+    }
+}
+
+function showFormUser(){
+    let byItems=document.getElementById("byItems")
+    let formUser=document.getElementById("user-info");
+    let indexesItem=document.getElementById("quantity")
+    if(indexesItem){
+        byItems.value=indexesItem.value;
+    }
+    if(formUser){
+        if(formUser.style.display==="block"){
+            formUser.style.display="none";
+        }else {
+            formUser.style.display="block";
         }
     }
 }
