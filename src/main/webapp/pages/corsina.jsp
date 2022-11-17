@@ -133,21 +133,21 @@
 </section>
 <%--<--%>
 <%--</div>--%>
-<%--            <div id="user-info" class="user-info">--%>
-<%--                <button>--%>
-<%--                    <img src="<%=request.getContextPath()%>/front/image/crosExit.png" alt="exit"--%>
-<%--                         onclick="showFormUser()">--%>
-<%--                </button>--%>
-<%--                <h2>Оформление заказа</h2>--%>
-<%--                <form action="<%=request.getContextPath()%>/hotMeBy.by">--%>
-<%--                    <input id="byItems" type="hidden" name="item">--%>
-<%--                    <input type="hidden" name="command" value="create_order_command">--%>
-<%--                    <input type="text" name="name" placeholder="ФИО">--%>
-<%--                    <input type="text" name="post" placeholder="Отделение почты">--%>
-<%--                    <input type="text" name="telephone" placeholder="Номер телефона">--%>
-<%--                    <input type="submit" value="Отправить">--%>
-<%--                </form>--%>
-<%--            </div>--%>
+            <div id="user-info" class="user-info">
+                <button>
+                    <img src="<%=request.getContextPath()%>/front/image/crosExit.png" alt="exit"
+                         onclick="showFormUser()">
+                </button>
+                <h2>Оформление заказа</h2>
+                <form action="<%=request.getContextPath()%>/hotMeBy.by">
+                    <input id="byItems" type="hidden" name="item">
+                    <input type="hidden" name="command" value="create_order_command">
+                    <input type="text" name="name" placeholder="ФИО">
+                    <input type="text" name="post" placeholder="Отделение почты">
+                    <input type="text" name="telephone" placeholder="Номер телефона">
+                    <input type="submit" value="Отправить">
+                </form>
+            </div>
 <%--</section>--%>
 <footer id="footer">
     <div class="container">

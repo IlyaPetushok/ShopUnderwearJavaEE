@@ -302,59 +302,59 @@ header h2 {
 
 /*!*user-info*!*/
 
-/*.user-info{*/
-/*    display: none;*/
-/*    !*background-color: lightgrey;*!*/
-/*    background-color: white;*/
-/*    border-radius: 25px;*/
-/*    position: fixed;*/
-/*    top: 200px;*/
-/*    left:35%;*/
-/*    width: 500px;*/
-/*    height: 320px;*/
-/*}*/
+.user-info{
+    display: none;
+    /*background-color: lightgrey;*/
+    background-color: white;
+    border-radius: 25px;
+    position: fixed;
+    top: 200px;
+    left:35%;
+    width: 500px;
+    height: 320px;
+}
 
-/*.user-info h2{*/
-/*    text-align: center;*/
-/*    margin: 20px 0px;*/
-/*}*/
+.user-info h2{
+    text-align: center;
+    margin: 20px 0px;
+}
 
-/*.user-info input{*/
-/*    display: flex;*/
-/*    margin: 30px auto;*/
-/*    width: 350px;*/
-/*    !*background-color: black;*!*/
-/*    !*color: white;*!*/
-/*    height: 25px;*/
-/*    border-radius: 5px;*/
-/*    outline: none;*/
-/*    padding: 0px 20px;*/
-/*}*/
+.user-info input{
+    display: flex;
+    margin: 30px auto;
+    width: 350px;
+    /*background-color: black;*/
+    /*color: white;*/
+    height: 25px;
+    border-radius: 5px;
+    outline: none;
+    padding: 0px 20px;
+}
 
 
-/*.user-info input:nth-child(6){*/
-/*    width: 200px;*/
-/*    !*padding: 10px 0 10px 0;*!*/
-/*    background-color: black;*/
-/*    color: white;*/
-/*    !*padding: 10px 0;*                                                                                                                                                                                                                                                                                                                                                 /*/
-/*    height: 30px;*!*/
-/*    justify-content: center;*/
-/*}*/
+.user-info input:nth-child(6){
+    width: 200px;
+    /*padding: 10px 0 10px 0;*/
+    background-color: black;
+    color: white;
+    /*padding: 10px 0;*                                                                                                                                                                                                                                                                                                                                                 /
+    height: 30px;*/
+    justify-content: center;
+}
 
-/*.user-info button{*/
-/*    position: absolute;*/
-/*    background-color: white;*/
-/*    border: none;*/
-/*    !*float: right;*!*/
-/*    top: 5px;*/
-/*    right: 0px;*/
-/*    margin: 10px 20px;*/
-/*}*/
-/*.user-info img{*/
-/*    width: 20px;*/
-/*    height: 20px;*/
-/*}*/
+.user-info button{
+    position: absolute;
+    background-color: white;
+    border: none;
+    /*float: right;*/
+    top: 5px;
+    right: 0px;
+    margin: 10px 20px;
+}
+.user-info img{
+    width: 20px;
+    height: 20px;
+}
 
 
 /*!*footer*!*/
