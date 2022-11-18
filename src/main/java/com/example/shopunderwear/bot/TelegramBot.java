@@ -1,5 +1,8 @@
 package com.example.shopunderwear.bot;
 
+import com.example.shopunderwear.entity.User;
+import com.example.shopunderwear.service.OrderService;
+import com.example.shopunderwear.service.impl.OrderServiceImpl;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
@@ -22,12 +25,20 @@ public class TelegramBot extends TelegramLongPollingBot {
 
     }
 
-    public void sendMessageOrder() throws TelegramApiException {
+    public void sendMessageOrder(User user,String idItems,int idOrder) throws TelegramApiException {
         execute(SendMessage
                 .builder()
                 .chatId("525877770")
-                .text("hi")
+                .text(createSendMessage(user,idItems,idOrder))
                 .build());
+    }
+
+    private String createSendMessage(User user,String idItems,int idOrder){
+        OrderService orderService= new OrderServiceImpl();
+        StringBuilder text=new StringBuilder();
+        text.append(user);
+        text.append("\n"+orderService.getInfoOrder(idOrder));
+        return text.toString();
     }
 
 }
